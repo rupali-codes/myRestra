@@ -42,6 +42,93 @@
 	color: #ff5500;
 }
 
+
+/*menu*/
+.nav-link{
+	color: white;
+	font-weight: bold;
+	margin-right: 10px;
+}
+.nav-link:hover,
+.nav-link:active,
+.active{
+	border-bottom: 4px solid #ff5500;
+	color: #ff5500;
+}
+.menu{
+	background-color: #4d2600; 
+	padding: 6rem;
+}
+.menu-header{
+	display: flex;
+}
+.button{
+	background-color: #ff5500;
+	padding: 15px 30px;
+	border-radius: 30px;
+	color: white;
+	border: none;
+	font-size: 20px;
+	float: right;
+	margin: auto;
+	float: right;
+}
+.card{
+	text-align: center;
+}
+.cImg{
+	height: 180px;
+	width: 180px;
+	margin: 10px auto;	
+}
+.price{
+	background-color: #ff5500;
+	border-radius: 30px;
+	padding: 5px;
+	font-weight: bold;
+	text-align: center;
+	display: inline-block;
+	margin: auto 40%;
+	color: white;
+}
+.card-title{
+	font-size: 25px;
+	margin: 10px;
+	font-weight: bold;	
+
+}
+.btns{
+	margin: auto 45%;
+	display: flex;
+}
+.btnMovs{
+	background-color: inherit;
+	border: none;
+	background-color: white;
+	border-radius: 10px;
+	margin: 10px;
+}
+.btnMovs img{
+	height: 50px;
+	width: 50px;
+}
+.btn-left{
+	margin-left: 10px;
+}
+.btnOrd{
+	border: none;
+	background-color: inherit;
+}
+.btnOrd a{
+	color:  #ff5500;
+	text-decoration: none;
+	font-weight: bold;
+	border-bottom: 3px solid  #ff5500;	
+}
+.btnOrd a:hover{
+	border-bottom: 1px solid  #ff5500
+}
+
 @media (max-width: 500px){
 	.healthyFood{
 		margin: 1rem;
