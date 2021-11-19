@@ -42,7 +42,7 @@
 	color: #ff5500;
 }
 
-@media (max-width: 700px){
+@media (max-width: 500px){
 	.healthyFood{
 		margin: 1rem;
 	}
@@ -54,8 +54,6 @@
 	}
 	.service{
 		width: auto;
-		border: 1px solid #d9d9d9;
-		border-radius: 20px;
 		padding: 10px;
 		margin: 10px 20px;
 	}
@@ -72,5 +70,18 @@
 	}
 	.para{
 		font-size: 15px;
+	}
+}
+
+@media (min-width: 500px) and (max-width: 900px){
+	.healthyFood{
+		margin: 0.7rem;
+	}
+	.services{
+		display: block;
+	}
+	.service{
+		margin: 10px auto;
+		padding: 20px;
 	}
 }
