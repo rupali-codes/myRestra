@@ -159,8 +159,7 @@
 		font-size: 15px;
 	}
 }
-/* changed .navbar to .navbarMain */
-.navbarMain {
+.navbar {
     background-color: #fff4f2;
     cursor: pointer;
 }
