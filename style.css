@@ -72,7 +72,20 @@
 		font-size: 15px;
 	}
 }
+.navbar {
+    background-color: #fff4f2;
+    cursor: pointer;
+}
 
+#book-table {
+    color: orange;
+    border-bottom: 4px solid orange;
+}
+
+#hero-sec {
+    background-color: #fff4f2;
+    z-index: 1;
+}
 @media (min-width: 500px) and (max-width: 900px){
 	.healthyFood{
 		margin: 0.7rem;
