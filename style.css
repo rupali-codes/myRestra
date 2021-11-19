@@ -163,7 +163,9 @@
     background-color: #fff4f2;
     cursor: pointer;
 }
-
+.rmbg{
+    background-color: inherit;
+}
 #book-table {
     color: orange;
     border-bottom: 4px solid orange;
