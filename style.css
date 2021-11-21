@@ -127,6 +127,34 @@
 	border-bottom: 1px solid  #ff5500
 }
 
+/*Book a table*/
+.bookTable{
+	display: flex;
+	margin: 6rem;
+	/*border: 1px solid red;*/
+}
+
+.girlImg img{
+	height: 450px;
+	width: 500px;
+}
+
+.form{
+	margin: 0 5rem;
+	padding: 3rem;
+}
+.req, #msg{
+	width: 100%;
+	padding: 5px;
+}
+#msg{
+	border-radius: 10px;
+	height: 6rem;
+	padding: auto 10px; 
+}
+form input{
+	margin: 10px;
+}
 @media (max-width: 500px){
 	/*healthy food*/
 	.healthyFood{
@@ -163,6 +191,12 @@
 		padding: 2rem;
 	}
 
+	.navbar{
+		border: 2px solid red;
+	}
+	.nav-link{
+		color: white;
+	}
 	.menu-header{
 		display: block;
 		text-align: center;
@@ -197,6 +231,35 @@
 		margin: auto;
 	}
 
+	/*book table*/
+	.bookTable{
+		display: block;
+		margin: 1rem;
+	}
+
+	.girlImg{
+		margin: 20px;
+	}
+	.girlImg img{
+		height: 250px;
+		width: 100%;
+	}
+
+	.form{
+		margin: 20px;
+		padding: 10px;
+		text-align: center;
+	}
+	#msg{
+		height: 5rem;
+		padding: auto 10px; 
+		margin-top: 10px;
+
+	}
+	form input{
+		margin: 10px;
+	}
+
 }
 
 @media (min-width: 500px) and (max-width: 900px){
@@ -209,6 +272,10 @@
 	.service{
 		margin: 10px auto;
 		padding: 20px;
+	}
+	.bookTable{
+		display: block;
+		margin: 1rem;
 	}
 }
 
