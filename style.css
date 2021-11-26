@@ -1,6 +1,9 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 
@@ -56,29 +59,34 @@
 
 
 /*menu*/
-.nl{
+
+.nl {
     color: white;
     font-weight: bold;
     margin-right: 10px;
     border-bottom: 4px solid #4d2600;
 }
+
 .nl:hover,
-.active
-{
+.active {
     border-bottom: 4px solid #ff5500;
     color: #ff5500;
 }
-.hidden{
+
+.hidden {
     display: none;
 }
-.menu{
-    background-color: #4d2600; 
+
+.menu {
+    background-color: #4d2600;
     padding: 6rem;
 }
-.menu-header{
+
+.menu-header {
     display: flex;
 }
-.button{
+
+.button {
     background-color: #ff5500;
     padding: 15px 30px;
     border-radius: 30px;
@@ -87,15 +95,18 @@
     font-size: 20px;
     margin: auto;
 }
-.card{
+
+.card {
     text-align: center;
 }
-.cImg{
+
+.cImg {
     height: 180px;
     width: 180px;
-    margin: 10px auto;  
+    margin: 10px auto;
 }
-.price{
+
+.price {
     background-color: #ff5500;
     border-radius: 30px;
     padding: 5px;
@@ -105,42 +116,48 @@
     margin: auto 40%;
     color: white;
 }
-.card-title{
+
+.card-title {
     font-size: 25px;
     margin: 10px;
-    font-weight: bold;  
-
+    font-weight: bold;
 }
 
-.btns{
+.btns {
     margin: auto 45%;
     display: flex;
 }
-.btnMovs{
+
+.btnMovs {
     border: none;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     margin: 10px;
 }
-.btnMovs img{
+
+.btnMovs img {
     height: 50px;
     width: 50px;
 }
-.btn-left{
+
+.btn-left {
     margin-left: 10px;
 }
-.btnOrd{
+
+.btnOrd {
     border: none;
     background-color: inherit;
 }
-.btnOrd a{
-    color:  #ff5500;
+
+.btnOrd a {
+    color: #ff5500;
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 3px solid  #ff5500;  
+    border-bottom: 3px solid #ff5500;
 }
-.btnOrd a:hover{
-    border-bottom: 1px solid  #ff5500
+
+.btnOrd a:hover {
+    border-bottom: 1px solid #ff5500
 }
 
 
@@ -209,40 +226,41 @@ form input {
         font-size: 15px;
     }
     /*menu*/
-    .menu{
+    .menu {
         padding: 2rem;
     }
-    .menu-header{
+    .menu-header {
         display: block;
         text-align: center;
     }
-    .button{
+    .button {
         padding: 5px 10px;
         margin: auto;
     }
-    .cImg{
+    .cImg {
         height: 100px;
         width: 100px;
     }
-    .card-title{
+    .card-title {
         font-size: 20px;
     }
-    .para{
+    .para {
         font-size: 15px;
     }
-    .btns{
+    .btns {
         display: flex;
         margin: auto;
     }
-    .btnMovs{
+    .btnMovs {
         border-radius: 50px;
         margin: 7px;
     }
-    .btnMovs img{
+    .btnMovs img {
         height: 30px;
         width: 30px;
     }
-    .btn-left, .btn-right{
+    .btn-left,
+    .btn-right {
         margin: auto;
     }
     /*book table*/
@@ -314,4 +332,55 @@ form input {
     right: 2%;
     bottom: 5%;
     box-shadow: 1px 4px 15px grey;
+}
+
+.carousel-item {
+    border-bottom: none;
+}
+
+#button-bg {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    opacity: 0.4;
+    left: 50%;
+    transition: all 0.5s;
+}
+
+.rounded-pill:hover #button-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: shakeX;
+    animation-duration: .6s;
+}
+
+#feedback {
+    border: 1px solid rgb(224, 221, 221);
+    transition: box-shadow 1s;
+}
+
+#feedback:hover {
+    border: none;
+    box-shadow: 5px 15px 25px #f1e5df, -10px -10px 30px white;
+}
+
+.hover-border {
+    /* border-bottom: 4px solid orange; */
+    transition: border .3s;
+    cursor: pointer;
+}
+
+#book-table {
+    color: orange;
+    border-bottom: none;
+}
+
+.hover-border:hover {
+    border-bottom: 4px solid orange;
+}
+
+#book-table:hover {
+    border-bottom: 4px solid orange;
 }
