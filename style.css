@@ -60,7 +60,8 @@
 
 /*menu*/
 
-.nl {
+.nl{
+
     color: white;
     font-weight: bold;
     margin-right: 10px;
@@ -68,25 +69,23 @@
 }
 
 .nl:hover,
-.active {
+.active
+{
     border-bottom: 4px solid #ff5500;
     color: #ff5500;
 }
-
-.hidden {
+.hidden{
     display: none;
 }
+.menu{
+    background-color: #4d2600; 
 
-.menu {
-    background-color: #4d2600;
     padding: 6rem;
 }
-
-.menu-header {
+.menu-header{
     display: flex;
 }
-
-.button {
+.button{
     background-color: #ff5500;
     padding: 15px 30px;
     border-radius: 30px;
@@ -95,18 +94,15 @@
     font-size: 20px;
     margin: auto;
 }
-
-.card {
+.card{
     text-align: center;
 }
-
-.cImg {
+.cImg{
     height: 180px;
     width: 180px;
-    margin: 10px auto;
+    margin: 10px auto;  
 }
-
-.price {
+.price{
     background-color: #ff5500;
     border-radius: 30px;
     padding: 5px;
@@ -116,48 +112,45 @@
     margin: auto 40%;
     color: white;
 }
-
-.card-title {
+.card-title{
     font-size: 25px;
     margin: 10px;
-    font-weight: bold;
+    font-weight: bold;  
+
 }
 
-.btns {
+.btns{
     margin: auto 45%;
     display: flex;
 }
 
-.btnMovs {
+
+.btnMovs{
+
     border: none;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     margin: 10px;
 }
-
-.btnMovs img {
+.btnMovs img{
     height: 50px;
     width: 50px;
 }
-
-.btn-left {
+.btn-left{
     margin-left: 10px;
 }
-
-.btnOrd {
+.btnOrd{
     border: none;
     background-color: inherit;
 }
-
-.btnOrd a {
-    color: #ff5500;
+.btnOrd a{
+    color:  #ff5500;
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 3px solid #ff5500;
+    border-bottom: 3px solid  #ff5500;  
 }
-
-.btnOrd a:hover {
-    border-bottom: 1px solid #ff5500
+.btnOrd a:hover{
+    border-bottom: 1px solid  #ff5500
 }
 
 
@@ -226,41 +219,40 @@ form input {
         font-size: 15px;
     }
     /*menu*/
-    .menu {
+    .menu{
         padding: 2rem;
     }
-    .menu-header {
+    .menu-header{
         display: block;
         text-align: center;
     }
-    .button {
+    .button{
         padding: 5px 10px;
         margin: auto;
     }
-    .cImg {
+    .cImg{
         height: 100px;
         width: 100px;
     }
-    .card-title {
+    .card-title{
         font-size: 20px;
     }
-    .para {
+    .para{
         font-size: 15px;
     }
-    .btns {
+    .btns{
         display: flex;
         margin: auto;
     }
-    .btnMovs {
+    .btnMovs{
         border-radius: 50px;
         margin: 7px;
     }
-    .btnMovs img {
+    .btnMovs img{
         height: 30px;
         width: 30px;
     }
-    .btn-left,
-    .btn-right {
+    .btn-left, .btn-right{
         margin: auto;
     }
     /*book table*/
