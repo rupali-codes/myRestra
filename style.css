@@ -1,6 +1,9 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 
@@ -56,12 +59,15 @@
 
 
 /*menu*/
+
 .nl{
+
     color: white;
     font-weight: bold;
     margin-right: 10px;
     border-bottom: 4px solid #4d2600;
 }
+
 .nl:hover,
 .active
 {
@@ -73,6 +79,7 @@
 }
 .menu{
     background-color: #4d2600; 
+
     padding: 6rem;
 }
 .menu-header{
@@ -116,7 +123,10 @@
     margin: auto 45%;
     display: flex;
 }
+
+
 .btnMovs{
+
     border: none;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
@@ -314,4 +324,55 @@ form input {
     right: 2%;
     bottom: 5%;
     box-shadow: 1px 4px 15px grey;
+}
+
+.carousel-item {
+    border-bottom: none;
+}
+
+#button-bg {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    opacity: 0.4;
+    left: 50%;
+    transition: all 0.5s;
+}
+
+.rounded-pill:hover #button-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: shakeX;
+    animation-duration: .6s;
+}
+
+#feedback {
+    border: 1px solid rgb(224, 221, 221);
+    transition: box-shadow 1s;
+}
+
+#feedback:hover {
+    border: none;
+    box-shadow: 5px 15px 25px #f1e5df, -10px -10px 30px white;
+}
+
+.hover-border {
+    /* border-bottom: 4px solid orange; */
+    transition: border .3s;
+    cursor: pointer;
+}
+
+#book-table {
+    color: orange;
+    border-bottom: none;
+}
+
+.hover-border:hover {
+    border-bottom: 4px solid orange;
+}
+
+#book-table:hover {
+    border-bottom: 4px solid orange;
 }

@@ -28,32 +28,33 @@
             </button>
             <div class="collapse navbar-collapse text-center text-md-start" id="navmenu">
                 <ul class="navbar-nav fw-bold fs-5">
-                    <li class="nav-item mx-lg-2  p-2 p-lg-0">
+                    <li class="nav-item mx-lg-2  p-2 p-lg-0 hover-border">
                         <div class="nav-item">Home</div>
                     </li>
-                    <li class="nav-item mx-lg-2  p-2 p-lg-0">
+                    <li class="nav-item mx-lg-2  p-2 p-lg-0 hover-border">
                         <div class="nav-item">Menu</div>
                     </li>
-                    <li class="nav-item mx-lg-2  p-2 p-lg-0">
+                    <li class="nav-item mx-lg-2  p-2 p-lg-0 hover-border">
                         <div class="nav-item">About</div>
                     </li>
-                    <li class="nav-item mx-lg-2  p-2 p-lg-0">
+                    <li class="nav-item mx-lg-2  p-2 p-lg-0 hover-border">
                         <div class="nav-item">Blog</div>
                     </li>
-                    <li class="nav-item mx-lg-2  p-2 p-lg-0">
+                    <li class="nav-item mx-lg-2  p-2 p-lg-0 hover-border">
                         <div class="nav-item">Contact</div>
                     </li>
                 </ul>
 
             </div>
             <ul class="navbar-nav  ms-auto fw-bold fs-5">
-                <li class="nav-item mx-lg-2  p-2 p-lg-0">
-                    <div class="nav-item fw-bold rounded-pill btn btn-light  btn-lg" style="background-color: #f86011;">
+                <li class="nav-item mx-lg-2  p-2 p-lg-0 ">
+                    <div class="btn-dark border-0 nav-item fw-bold rounded-pill btn btn-light  btn-lg position-relative" style="background-color: #f86011;">
                         +1023682802
+                        <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
                     </div>
                 </li>
                 <li class="nav-item mx-lg-2  mt-2 p-2 p-lg-0 text-center">
-                    <div class="nav-item" id="book-table">
+                    <div class="nav-item hover-border" id="book-table">
                         Book a Table
                     </div>
                 </li>
@@ -70,7 +71,9 @@
                     <p class="fs-3">Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.</p>
                     <div class="d-lg-flex ">
                         <div class="py-3 mx-lg-2">
-                            <div class="btn btn-lg btn-dark border-0 rounded-pill fw-bold" style="background-color: #f86011;">Our Menu</div>
+                            <div class="btn btn-lg btn-dark border-0 rounded-pill fw-bold position-relative" style="background-color: #f86011;">Our Menu
+                                <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+                            </div>
                         </div>
 
                         <div class="py-3 mx-lg-2 animate__animated animate__bounce ">
@@ -134,6 +137,7 @@
 
     <!-- section MENU -->
     <section class="menu">
+
       <div class="menu-header">
         <div>
           <h2 class="heading text-light">Most Populer Dishes</h2>
@@ -163,6 +167,7 @@
                   <button class="btn nl fastfood" href="#">Fastfood</button>
                 </li>
               </ul>
+
             </div>
           </div>
         </nav>
@@ -173,6 +178,8 @@
           <!-- <div class="card m-2 rounded">
             <img src="images/f1.jpg" class="card-img-top cImg" alt="...">
             <div class="price">$20</div>
+
+
 
             <div class="card-body">
               <h5 class="card-title">Pasta</h5>
@@ -203,9 +210,12 @@
             </div>
               <button class="btnOrd m-3"><a href="">Order now!</a></button>
           </div> -->
+
+=======
         </div>
 
      <!--  <div class="btns"> 
+
         <button class="btnMovs btn-left">
           <img src="images/caret-left.svg">
         </button>
@@ -213,23 +223,25 @@
         <button class="btnMovs btn-right">
           <img src="images/caret-right.svg">
         </button>
+
       </div>  --> 
+
     </section>
 
     <!-- section BOOK A TABLE -->
-    <section class="bookTable ">
+    <section class="bookTable justify-content-center">
 
-        <div class="girlImg ">
+        <div class="girlImg d-flex justify-content-center">
             <img src="images/girl.jpg ">
         </div>
 
-        <div class="form ">
+        <div class="form">
             <div>
                 <h2 class="heading ">Book a Table</h2>
-                <p class="para ">Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.</p>
+                <p class="para">Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.</p>
             </div>
             <form>
-                <input type="text " id="guests " class="rounded-pill p-2 border-1 " placeholder="Number of Guest ">
+                <input type="text" id="guests" class="rounded-pill p-2 border-1 " placeholder="Number of Guest ">
                 <div>
                     <input type="date " placeholder="Date " class="rounded-pill p-2 border-1 ">
                     <select id="type " class="rounded-pill p-2 ">
@@ -242,63 +254,91 @@
                 <input type="text " id="phone " class="rounded-pill p-2 border-1 " placeholder="Phone No. ">
                 <textarea id="msg " placeholder="Message "></textarea>
 
-                <button class="button req ">Send Request</button>
+                <button class="button req position-relative rounded-pill">Send Request
+                    <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+
+                </button>
             </form>
         </div>
 
     </section>
 
-    <!-- section FEEDBACK -->
-    <section class="pt-5 ">
-        <div class="container p-0 ">
-            <div class="d-md-flex justify-content-between overflow-hidden ">
-                <div class="col-md-5 text-center lead secondary border p-5 mx-2 rounded ">
-                    <img src="images/customer-review1.webp " alt=" ">
-                    <div class="mt-5 ">
-                        "Making a reservation at Délicious restaurant is easy and takes just a couple of minutes midst tree form seas. </div>
-                    <div class="pt-5">
 
-                        <i class="bi bi-star-fill" style="color: #f86011;"></i>
-                        <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                        <i class=" bi bi-star-fill " style="color: #f86011; "></i>
-                        <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                        <i class=" bi bi-star-fill " style="color: #f86011; "> </i>
-                        <span class="lead"> -Robert</span>
+    <!-- section FEEDBACK slider -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-5 text-center lead secondary  p-5 my-3 rounded my-md-0 mx-2" id="feedback">
+                        <img src="images/customer-review3.webp" alt="">
+                        <div class="mt-5 text-dark">
+                            "Making a reservation at Délicious restaurant is easy and takes just a couple of minutes midst tree form seas.
+                        </div>
+                        <div class="pt-5">
+
+                            <i class="bi bi-star-fill" style="color: #f86011;"></i>
+                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
+                            <i class=" bi bi-star-fill " style="color: #f86011; "></i>
+                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
+                            <i class=" bi bi-star-fill " style="color: #f86011; "> </i>
+                            <span class="lead"> -Robert</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-5 text-center lead secondary  p-5 my-3 rounded my-md-0 mx-2" id="feedback">
+                        <img src="images/customer-review2.webp" alt="">
+                        <div class="mt-5 text-dark">
+                            "Making a reservation at Délicious restaurant is easy and takes just a couple of minutes midst tree form seas.
+                        </div>
+                        <div class="pt-5">
+
+                            <i class="bi bi-star-fill" style="color: #f86011;"></i>
+                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
+                            <i class=" bi bi-star-fill " style="color: #f86011; "></i>
+                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
+                            <i class=" bi bi-star-fill " style="color: #f86011; "> </i>
+                            <span class="lead"> -Robert</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-5 text-center lead secondary border p-5 mx-2 rounded my-3 my-md-0">
-                    <img src="images/customer-review2.webp" alt="">
-                    <div class="mt-5">
-                        "Making a reservation at Délicious restaurant is easy and takes just a couple of minutes midst tree form seas.
-                    </div>
-                    <div class="pt-5">
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-5 text-center lead secondary  p-5 my-3 rounded my-md-0 mx-2" id="feedback">
+                        <img src="images/customer-review1.webp" alt="">
+                        <div class="mt-5 text-dark">
+                            "Making a reservation at Délicious restaurant is easy and takes just a couple of minutes midst tree form seas.
+                        </div>
+                        <div class="pt-5">
 
-                        <i class="bi bi-star-fill" style="color: #f86011;"></i>
-                        <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                        <i class=" bi bi-star-fill " style="color: #f86011; "></i>
-                        <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                        <i class=" bi bi-star-fill " style="color: #f86011; "> </i>
-                        <span class="lead"> -Robert</span>
-                    </div>
-                </div>
-                <div class="col-md-5 text-center lead secondary border p-5 my-3 rounded my-md-0 mx-2">
-                    <img src="images/customer-review3.webp" alt="">
-                    <div class="mt-5">
-                        "Making a reservation at Délicious restaurant is easy and takes just a couple of minutes midst tree form seas.
-                    </div>
-                    <div class="pt-5">
+                            <i class="bi bi-star-fill" style="color: #f86011;"></i>
+                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
+                            <i class=" bi bi-star-fill " style="color: #f86011; "></i>
+                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
+                            <i class=" bi bi-star-fill " style="color: #f86011; "> </i>
+                            <span class="lead"> -Robert</span>
+                        </div>
 
-                        <i class="bi bi-star-fill" style="color: #f86011;"></i>
-                        <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                        <i class=" bi bi-star-fill " style="color: #f86011; "></i>
-                        <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                        <i class=" bi bi-star-fill " style="color: #f86011; "> </i>
-                        <span class="lead"> -Robert</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
 
     <!-- section FOOTER -->
     <footer class="pt-5">
@@ -318,7 +358,7 @@
                 </div>
 
                 <div class="my-5">
-                    <div class="h2">Quick Links</div>
+                    <div class="h2 hover-border">Quick Links</div>
                     <ul class="list list-unstyled lead mt-5">
 
                         <li class="list-item p-2">
@@ -340,7 +380,7 @@
                 </div>
 
                 <div class="my-5">
-                    <div class="h2">Cakes</div>
+                    <div class="h2 hover-border">Cakes</div>
                     <ul class="list list-unstyled lead mt-5">
 
                         <li class="list-item p-2">
@@ -359,7 +399,7 @@
                     </ul>
                 </div>
                 <div class="lead my-5">
-                    <h2>Contact Us</h2>
+                    <h2 class="hover-border">Contact Us</h2>
                     <div class="mt-5">
                         <p>76/A, Green Lane, Dhanmondi, NYC</p>
                         <p style="color: #f86011" class="fw-bold fs-3">+10 (78) 738-9083
@@ -381,4 +421,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <script src="script.js"></script>
+
 </html>
