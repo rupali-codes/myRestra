@@ -180,8 +180,11 @@
 
 #msg {
     border-radius: 10px;
-    height: 6rem;
+    height: 5rem;
+    margin-bottom: 10px;
+    display: block;
     padding: auto 10px;
+
 }
 
 form input {
@@ -280,9 +283,14 @@ form input {
     form input {
         margin: 10px;
     }
+    input, select, #msg, .req{
+        width: 100%;
+        display: block;
+        margin-left: 10px;
+    }
 }
 
-@media (min-width: 500px) and (max-width: 900px) {
+@media (min-width: 500px) and (max-width: 920px) {
     .healthyFood {
         margin: 0.7rem;
     }
@@ -296,6 +304,30 @@ form input {
     .bookTable {
         display: block;
         margin: 1rem;
+    }
+
+    /*menu*/
+    .card-group{
+        display: block;
+    }
+    .menu{
+        padding: 1rem;
+    }
+    .menu-header{
+        display: block;
+        text-align: center;
+    }
+    .button{
+        padding: 5px 15px;
+     }
+    .cImg{
+        height: 90px;
+        width: 90px;
+    }
+    input, select, #msg, .req{
+        width: 100%;
+        display: block;
+        margin-left: 10px;
     }
 }
 
