@@ -2,10 +2,13 @@ const fullMenu = document.querySelector('.full-menu');
 const dishes = document.querySelector('.dishes');
 
 const genMarkup = (price, imgs, title, desc) => {
-	const markup = 	`
+    const markup = `
 	<div class="dishes">
     		 <div class="dish">
-    			<div class="price">$${price[0]}</div>
+    			<div class="price position-relative rounded-pill">
+				                <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+
+				$${price[0]}</div>
     			<img src="images/${imgs[0]}">
 
     			<div class="desc">
@@ -16,7 +19,10 @@ const genMarkup = (price, imgs, title, desc) => {
     		</div>
 
     		<div class="dish">
-    			<div class="price">$${price[1]}</div>
+    			<div class="price position-relative rounded-pill">
+				                <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+
+				$${price[1]}</div>
     			<img src="images/${imgs[1]}">
     			<div class="desc">
     				<h3 class="title heading">${title[1]}</h3>
@@ -26,7 +32,10 @@ const genMarkup = (price, imgs, title, desc) => {
     		</div>
 
     		<div class="dish">
-    			<div class="price">$${price[2]}</div>
+    			<div class="price position-relative rounded-pill">
+				                <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+
+				$${price[2]}</div>
     			<img src="images/${imgs[2]}">
 
     			<div class="desc">
@@ -37,7 +46,10 @@ const genMarkup = (price, imgs, title, desc) => {
     		</div>
 
     		<div class="dish">
-    			<div class="price">$${price[3]}</div>
+    			<div class="price position-relative rounded-pill">
+				                <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+
+				$${price[3]}</div>
     			<img src="images/${imgs[3]}">
 
     			<div class="desc">
@@ -49,20 +61,16 @@ const genMarkup = (price, imgs, title, desc) => {
     	</div> 
 	`;
 
-	fullMenu.insertAdjacentHTML('beforeend', markup);
+    fullMenu.insertAdjacentHTML('beforeend', markup);
 }
 
 const desc = 'Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.';
 
 genMarkup(
-	[120, 234, 145, 67],
-	['f2.jpg', 'f1.jpg','f3.webp', 'f2.jpg'],
-	['Pasta', 'Samosa', 'Burger', 'Pizza'],
-	desc
-	);
+    [120, 234, 145, 67], ['f2.jpg', 'f1.jpg', 'f3.webp', 'f2.jpg'], ['Pasta', 'Samosa', 'Burger', 'Pizza'],
+    desc
+);
 genMarkup(
-	[120, 234, 145, 67],
-	['f2.jpg', 'f1.jpg','f3.webp', 'f2.jpg'],
-	['Momos', 'Batata Vada', 'Pow Bhaji', 'Rice'],
-	desc
-	);
+    [120, 234, 145, 67], ['f2.jpg', 'f1.jpg', 'f3.webp', 'f2.jpg'], ['Momos', 'Batata Vada', 'Pow Bhaji', 'Rice'],
+    desc
+);
