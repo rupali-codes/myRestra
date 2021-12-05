@@ -1,0 +1,64 @@
+.contact{
+    text-align: center;
+    padding-top: 1rem;
+}
+.contact-us{
+    display: flex;
+    padding: 3rem;
+}
+.social{
+    text-align: left;
+    margin: 2rem;
+}
+.msg{
+    text-align: left;
+    margin: 10px auto;
+    background-color: white;
+    padding: 20px;
+}
+h4{
+    color: #f86011;
+}
+form{
+
+    margin: 10px;
+}
+input{
+    display: block;
+    width: 300px;
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.icons i{
+    margin: 10px;
+    color: #f86011;
+}
+
+@media (max-width: 900px){
+    .contact-us{
+        display: block;
+        padding: 2rem;
+    }
+    .social{
+        text-align: center;
+    }
+    .msg{
+        padding: 15px;
+    }
+    input{
+        display: block;
+        width: 90%;
+        padding: 15px;
+        border: none;
+        border-bottom: 1px solid black;
+        margin-bottom: 10px;
+    }
+
+    .icons i{
+        margin: 10px;
+    }
+
+}
