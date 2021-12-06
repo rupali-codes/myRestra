@@ -2,8 +2,7 @@ const dishes = document.querySelector('.dishes');
 const searchFoods = document.querySelector('#searchFoods');
 
 //food menu object
-const searchMenu = [
-    {
+let searchMenu = [{
         price: 120,
         img: 'images/f2.jpg',
         food: 'chilla',
@@ -14,7 +13,7 @@ const searchMenu = [
         img: 'images/f3.webp',
         food: 'laddu',
         desc: 'A short description'
-    }, 
+    },
     {
         price: 50,
         img: 'images/f1.jpg',
@@ -34,11 +33,11 @@ const searchMenu = [
         desc: 'A short description'
     }
 ];
-
+searchMenu = searchMenu.map((item, index) => ({...item, id: index })) //added an id generator
 
 //generating markup
 const generateMarkup = (menu) => {
-   return `
+    return `
         <div class="dish">
             <div class="price">$${menu.price}</div>
             <img src="${menu.img}">
@@ -55,7 +54,7 @@ const generateMarkup = (menu) => {
 //rendering results
 const render = (menu) => {
     dishes.innerHTML = '';
-    menu.map(dish => dishes.insertAdjacentHTML('beforeend',  generateMarkup(dish)))
+    menu.map(dish => dishes.insertAdjacentHTML('beforeend', generateMarkup(dish)))
 }
 
 //default
@@ -66,15 +65,13 @@ searchFoods.addEventListener('input', () => {
     const input = (searchFoods.value).toLowerCase();
     const searchFood = searchMenu.filter(menu => menu.food.includes(input));
 
-    if(searchFood.length === 0){
+    if (searchFood.length === 0) {
         return dishes.innerHTML = `
             <h1 class='m-auto text-center'>No Results</h1>
             `
-    }else if(input === ''){
+    } else if (input === '') {
         render(searchMenu);
-    }else{
+    } else {
         render(searchFood);
     }
 })
-
-
