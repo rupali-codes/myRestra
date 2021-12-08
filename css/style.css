@@ -5,6 +5,12 @@
     padding: 0;
     font-family: 'Raleway', sans-serif;
 }
+.bg-orange{
+    background-color: #ff5500;;
+}
+.text-orange{
+    color: #ff5500;;
+}
 
 
 /*healthy food styling*/
@@ -143,13 +149,13 @@
     border: none;
     background-color: inherit;
 }
-.btnOrd a{
+.btnOrd{
     color:  #ff5500;
     text-decoration: none;
     font-weight: bold;
     border-bottom: 3px solid  #ff5500;  
 }
-.btnOrd a:hover{
+.btnOrd:hover{
     border-bottom: 1px solid  #ff5500
 }
 

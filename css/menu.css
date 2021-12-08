@@ -1,60 +1,11 @@
-.dishes{
-   display: flex;
-   flex-wrap: wrap;   
-   justify-content: center;
-
-}
-.dish{
-	width: 320px;
-	border: 1px solid #d9d9d9;
-	border-radius: 20px;
-	padding: 20px 10px;
-	margin: 20px;
-	text-align: center;
-}
-.dish img{
-	height: 150px;
-	border-radius: 100%;
-	margin: 20px auto;
-}
 #searchFoods{
     width: 400px;
     margin: auto;
 }
-@media (max-width: 500px){
-	.dishes{
-		display: block;
-	}
-	.dish{
-		margin: 20px auto;
-	}
-	.dish img{
-		height: 100px;
-	}
+.selected{
+    color: #ff5500;
 }
-@media (min-width: 500px) and (max-width: 660px){
-    .dish{
-        width: 300px;
-    }
-    .dish img{
-        height: 100px;
-    }
-}
-
-@media (min-width: 660px) and (max-width: 750px){
-    .dish{
-        width: 310px;
-    }
-     .dish img{
-        height: 100px;
-    }
-}
-
-@media (min-width: 750px) and (max-width: 880px){
-    .dish{
-        width: 330px;
-    }
-     .dish img{
-        height: 100px;
-    }
+.border-left{
+	border: none;
+	border-left: 4px solid #ff5500;
 }
