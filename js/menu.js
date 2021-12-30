@@ -2,48 +2,52 @@ const dishes = document.querySelector('#dishes');
 const searchFoods = document.querySelector('#searchFoods');
 const Footer = document.querySelector('#footer');
 
+const orders = [];
+
 //food menu object
-let searchMenu = [{
+let searchMenu = [
+    {
         price: 120,
         img: 'images/f2.jpg',
-        food: 'chilla',
+        food: 'Neapolitan Pizza',
         desc: 'A short description'
     },
     {
         price: 20,
         img: 'images/f3.webp',
-        food: 'laddu',
+        food: 'Chicago Pizza',
         desc: 'A short description'
     },
     {
         price: 50,
         img: 'images/f1.jpg',
-        food: 'hot water',
+        food: 'Sicilian Pizza',
         desc: 'A short description'
     },
     {
         price: 35,
         img: 'images/f2.jpg',
-        food: 'cold water',
+        food: 'Detroit Pizza',
         desc: 'A short description'
     },
     {
         price: 35,
         img: 'images/f2.jpg',
-        food: 'Juice',
+        food: 'California Pizza',
         desc: 'A short description'
     },
     {
         price: 99,
         img: 'images/f2.jpg',
-        food: 'Pizza',
+        food: 'Greek Pizza',
         desc: 'Yummy Pizza'
     }
 ];
-searchMenu = searchMenu.map((item, index) => ({...item, id: index })) //added an id generator
 
-//generating markup
-const generateMarkupCard = (menu) => {
+//added an id generator
+searchMenu = searchMenu.map((item, index) => ({...item, id: index }));
+
+const generateMarkup_menuItem = (menu) => {
    return `
         <div class="col-md-6 col-lg-3">
             <div class="card item" >
@@ -57,7 +61,6 @@ const generateMarkupCard = (menu) => {
                     </p>
 
                     <input type="text" class="qtty fontAwesome border-0 border-bottom mb-3 text-center form-control" name="qtty" placeholder="&#xf500; Enter Quantity" style="font-family: Arial, 'Font Awesome 5 Pro'" required>
-
                     <button class="btnOrd" data-fp="${menu.price}" data-fn="${menu.food}">Order Now!</button>
                 </div>
             </div>
@@ -68,7 +71,7 @@ const generateMarkupCard = (menu) => {
 //rendering results
 const render = (menu) => {
     dishes.innerHTML = '';
-    menu.map(dish => dishes.insertAdjacentHTML('beforeend',  generateMarkupCard(dish)))
+    menu.map(dish => dishes.insertAdjacentHTML('beforeend',  generateMarkup_menuItem(dish)))
 }
 
 //default
@@ -93,80 +96,97 @@ searchFoods.addEventListener('input', () => {
 
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@___BILLING___@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
 const orderBtns = document.querySelectorAll('.btnOrd');
-// const qtty = document.querySelector('.qtty');
 const bill = document.querySelector('.bill');
 const billText = document.querySelector('#bill');
 
-const prices = [];
-const foods = [];
 
 orderBtns.forEach((order) => {
     order.addEventListener('click', e => {
         e.preventDefault();
+ 
         const parent = e.target.closest('.card');
         const qtty = parent.querySelector('.qtty');
         const food = parent.querySelector('.title');
         const priceOrg = parent.querySelector('.price').textContent;
         const price = +(priceOrg.replace('$', ''))
-        // console.log(parent);
 
         if(qtty.value == ''){
             alert("Please enter the qtty");
         }else{
-            // console.log((qtty.value) * price);
              order.textContent = 'Ordered!';
-
-             prices.push((qtty.value) * price)
-             foods.push(food.textContent)
-             // console.log(foods)
+             orders.push({
+                name: food.textContent,
+                price: (qtty.value) * price
+             })
 
              parent.classList.add('selected');
              qtty.value = '';
         }
-
-        // const fp = +order.dataset.fp;
-        // const fn = order.dataset.fn;
-
-       
     })
 })
+
+//sum of prices
+const priceSum = (prices) => {
+    const sum = {};
+    prices.forEach(price => {
+        for(let [key, value] of Object.entries(price)){
+            if(sum[key]){
+                sum[key] += value;
+            }else{
+                sum[key] = value;
+            }
+        }
+    });
+    return sum.price;
+}
 
 bill.addEventListener('click', () => {
     const reducer = (pv, cv) => pv + cv;
 
-    if(prices.length === 0){
+    if(orders.length === 0){
         billText.textContent = "Please order something!"
     }else{
-         billText.textContent = '$' + prices.reduce(reducer);
+         billText.textContent = '$' + priceSum(orders);
     }
    
 })
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@___CART___@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-const orders = document.querySelector('#Orders');
+
+const cart = document.querySelector('#cart');
 const ordersList = document.querySelector('.orders-list');
 const cancel = document.querySelector('.cancel');
 
-const generateMarkupOrders = (name, price) => {
+const generateMarkup_orders = (order) => {
     const markup = `
         <li class="list-group-item d-flex justify-content-between align-items-start mb-2  border-left">
           <div class="ms-3 me-auto">
-             <h4>${name}</h4>
-                <span class="text-center">$${price}</span>
+             <h4>${order.name}</h4>
+                <span class="text-center">$${order.price}</span>
           </div>
           <button class="btn btn-secondary border-0 bg-orange rounded text-light cancel">
               Cancel
           </button>
       </li>
     `;
-    ordersList.insertAdjacentHTML('afterbegin', markup);
+    return markup;
 }
 
-
-orders.addEventListener('click', (e) => {
-    console.log(foods);
-   for(let i in prices){
-      generateMarkupOrders(foods[i], prices[i]);
-   }
+cart.addEventListener('click', () => {
+    if(orders.length === 0){
+        ordersList.textContent = 'Please order something :)';
+    }else{
+        ordersList.innerHTML = '';
+        orders.map(order => ordersList.insertAdjacentHTML('afterbegin', generateMarkup_orders(order)));
+    }
 })
+
+
+ordersList.addEventListener('click', (e) => {
+   const cnl = (e.target.closest('.cancel'))
+})
+
+
