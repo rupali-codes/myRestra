@@ -8,39 +8,33 @@ const orders = [];
 let searchMenu = [
     {
         price: 120,
-        img: 'images/f2.jpg',
-        food: 'Neapolitan Pizza',
-        desc: 'A short description'
+        img: 'images/br1.jpg',
+        food: 'Pasta Rolls',
     },
     {
         price: 20,
-        img: 'images/f3.webp',
-        food: 'Chicago Pizza',
-        desc: 'A short description'
+        img: 'images/br2.jpg',
+        food: 'Tost',
     },
     {
         price: 50,
-        img: 'images/f1.jpg',
-        food: 'Sicilian Pizza',
-        desc: 'A short description'
+        img: 'images/br3.jpg',
+        food: 'Omelatte',
     },
     {
         price: 35,
-        img: 'images/f2.jpg',
-        food: 'Detroit Pizza',
-        desc: 'A short description'
+        img: 'images/dr1.jpg',
+        food: 'Orange Juice',
     },
     {
         price: 35,
-        img: 'images/f2.jpg',
-        food: 'California Pizza',
-        desc: 'A short description'
+        img: 'images/dr2.jpeg',
+        food: 'Banana Shake',
     },
     {
         price: 99,
-        img: 'images/f2.jpg',
-        food: 'Greek Pizza',
-        desc: 'Yummy Pizza'
+        img: 'images/dr3.jpg',
+        food: 'Apple Juice',
     }
 ];
 
@@ -53,13 +47,9 @@ const generateMarkup_menuItem = (menu) => {
             <div class="card item" >
                 <div class="card-body text-center"> 
                     <h4 class="price">$${menu.price}</h4>
-                    <img src="${menu.img}" class="rounded-circle my-3 w-50">
+                    <img src="${menu.img}" class="rounded-circle my-3" height=150>
 
                     <h3 class="card-title title">${menu.food}</h3>
-                    <p class="lead card-text text-muted">
-                       ${menu.desc} 
-                    </p>
-
                     <input type="text" class="qtty fontAwesome border-0 border-bottom mb-3 text-center form-control" name="qtty" placeholder="&#xf500; Enter Quantity" style="font-family: Arial, 'Font Awesome 5 Pro'" required>
                     <button class="btnOrd" data-fp="${menu.price}" data-fn="${menu.food}">Order Now!</button>
                 </div>

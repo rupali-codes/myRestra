@@ -1,5 +1,5 @@
 const markupFooter = `
-	<footer class="pt-5 mt-5">
+	<footer class="pt-5">
         <div class="container">
             <div class="d-sm-flex flex-wrap justify-content-between text-center text-sm-start">
                 <div class="col-sm-12 col-md-4 lead my-5">
