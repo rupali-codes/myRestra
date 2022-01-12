@@ -59,14 +59,14 @@ const markupFooter = `
                 <div class="lead my-5">
                     <h4 class="hover-border">Contact Us</h2>
                     <div class="mt-5">
-                        <p>76/A, Green Lane, Dhanmondi, NYC</p>
+                        <p>Near Shakti Chauk Bijnor, <br> Bijnor Uttar Pradesh (India)</p>
                         <p style="color: #f86011" class="fw-bold fs-3">+91 1234554321
                         </p>
                         <p>myrestra@gmail.com</p>
                     </div>
                 </div>
                 <div class="text-center lead col-12">
-                    Designed and Devloped with <i class="bi bi-heart-fill"></i> by Rupali & Eugene Ishado
+                    Designed and Devloped with <i class="bi bi-heart-fill" style="color: #f86011;"></i> by Rupali & Eugene Ishado
                 </div>
             </div>
 

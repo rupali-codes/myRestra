@@ -163,8 +163,8 @@
 .bookTable {
     display: flex;
     margin: 2rem 6rem;
-    border-top: 3px solid #ff5500;
-    border-bottom: 3px solid #ff5500;
+    /*border-top: 0.5px solid #ff5500;*/
+    border-bottom: 2.5px solid #ff5500;
     padding-top: 2rem;
 }
 
@@ -391,7 +391,8 @@ form input {
 }
 
 .slide{
-    background-color: #f5f5f0;
+    margin: auto 6rem;
+    padding-top: 2rem;
 }
 
 #button-bg {
