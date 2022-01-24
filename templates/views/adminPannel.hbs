@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Pannel</title>
+	{{>links}}
+</head>
+<body>
+	<nav class="navbar navbar-light navbar-expand-lg px-4 py-2" style="z-index: 1; background-color: #fff4f2;" id="top">
+	    <div class="container-fluid justify-content-center">
+	        <a class="navbar-brand fw-bold fs-6" href="index"><img src="images/newLogo.png" alt="" class="rounded loggo"></a>
+	   
+	    </div>
+	</nav>
+	<!-- {{>navbar}} -->
+	<div class="text-center">
+		{{msg}}
+	</div>
+	<div class="container-fluid my-4">
+		<div class="text-center w-50 m-auto justify-content-center">
+			<img src="images/rb1.png" height= 130 class="rounded-circle" style="border: 0px solid #ff5500;">
+		</div>
+		<h1 class="text-center">Welcome to <span class="text-orange">Admin Pannel</span></h1>
+	</div>
+	<div class="container d-flex justify-content-center">
+		<button type="button" class="btn bg-orange text-light mx-1 mt-2 addBtn" data-bs-toggle="modal" data-bs-target="#AddFd">Add</button>
+
+		<button type="button" class="btn bg-orange text-light mx-1 mt-2 editBtn" data-bs-toggle="modal" data-bs-target="#EditFd">Edit</button>
+
+		<button type="button" class="btn bg-orange text-light mx-1 mt-2 delBtn" data-bs-toggle="modal" data-bs-target="#DeleteFd">Delete</button>
+
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="AddFd" tabindex="-1" aria-labelledby="addFood" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title text-orange" id="addFood">Add Food</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	       <form method="POST" action="/addfd" class="signup px-4 my-2" enctype="multipart/form-data">
+				<label for="name">Food name</label>
+				<input type="text" name="name" id="name">
+
+				<label for="price">Price</label>
+				<input type="text" name="price" id="price">
+
+				<label for="image">Upload picture</label>
+				<input type="file" name="image" id="image" accept="image/*">
+
+	            <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block" style="background-color: #f86011;">Add
+	            <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+		        </button>
+            
+			</form>
+	      </div>
+	  
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade" id="EditFd" tabindex="-1" aria-labelledby="editFood" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title text-orange" id="editFood">Update Food</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	       <form method="POST" action="/editfd" class="signup px-4 my-2" enctype="multipart/form-data">
+	       		<label for="oldName">Old name</label>
+				<input type="text" name="oldName" id="oldName">
+
+				<label for="name">New name</label>
+				<input type="text" name="name" id="name">
+
+				<label for="price">New Price</label>
+				<input type="text" name="price" id="price">
+
+				<label for="image">Update picture</label>
+				<input type="file" name="image" id="image" accept="image/*">
+
+	            <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block" style="background-color: #f86011;">Update
+	            <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+		        </button>
+            
+			</form>
+	      </div>
+	  
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade" id="DeleteFd" tabindex="-1" aria-labelledby="deleteFood" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title text-orange" id="deleteFood">Delete Food</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	       <form method="post" action="/deletefd" class="signup px-4 my-2">
+				<label for="name">Food name</label>
+				<input type="text" name="name" id="name">
+
+				<label for="price">Price</label>
+				<input type="text" name="price" id="price">
+
+	            <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block" style="background-color: #f86011;">DeleteFood
+	            <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+		        </button>
+            
+			</form>
+	      </div>
+	  
+	    </div>
+	  </div>
+	</div>
+
+	<img src="" class="image">
+
+	<!-- <form action="/testing" method="POST" enctype="multipart/form-data" class="text-center justify-content-center m-5">
+		<input type="file" name="file" id="file">
+		<input type="submit" name="submit" value="submit">
+	</form> -->
+
+	<section class="row g-4 p-5" id="dishes">
+		
+	</section>
+
+	<footer class="p-5">
+		<div class="text-center lead col-12">
+            Designed and Devloped with <i class="bi bi-heart-fill" style="color: #f86011;"></i> by Rupali & Eugene Ishado
+        </div>
+	</footer>
+
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  	<script type="text/javascript">
+  		const dishes = document.querySelector('#dishes');
+  		const addBtn = document.querySelector('.addBtn')
+  		const editBtn = document.querySelector('.editBtn')
+  		const delBtn = document.querySelector('.delBtn')
+
+  		const generateMarkup_menuItem = (menu) => {
+		   	return `
+		        <div class="col-md-6 col-lg-3">
+		            <div class="card item" >
+		                <div class="card-body text-center"> 
+		                    <h4 class="price"><i class="fas fa-rupee-sign"></i>.${menu.price}</h4>
+		                    <img src="data:image/jpg;base64, ${menu.image}" class="rounded-circle my-3" height=150>
+
+		                    <h3 class="card-title title">${menu.name}</h3>
+		                </div>
+		            </div>
+		        </div>
+		    `;
+		}
+
+		//rendering results
+		const render = (menu) => {
+		    dishes.innerHTML = '';
+		    menu.map(dish => dishes.insertAdjacentHTML('beforeend',  generateMarkup_menuItem(dish)))
+		}
+
+		const bs64 = (searchMenu) => {
+			searchMenu.forEach(item => {
+				const arrayBuffer = item.image.data
+				const base64String = btoa(String.fromCharCode(...new Uint8Array(item.image.data)));
+				item.image = base64String
+				// console.log(base64String)
+			})
+			render(searchMenu)
+		}
+		
+
+		//fetching data from database
+		fetch('http://localhost:8000/readFoods')
+		    .then(res => res.json())
+		    .then(data => {
+		        // render(data)
+		        searchMenu = [...data]
+		        bs64(searchMenu)
+		    })
+		    .catch(err => {
+		        console.log(err)
+		    })
+
+		    const clear = (element) => {
+		    	document.querySelector('#name').value = ''
+	    		document.querySelector('#price').value = ''
+	    		document.querySelector('#oldName').value = ''
+		    }
+		    addBtn.addEventListener('click', () => {
+		    	clear()
+		    })
+		    editBtn.addEventListener('click', () => {
+		    	clear()
+		    })
+		    delBtn.addEventListener('click', () => {
+		    	clear()
+		    })
+
+  	</script>
+</body>
+</html>

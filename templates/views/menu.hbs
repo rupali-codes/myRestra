@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{>links}}
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <title>Menu|MyRestra</title>
+</head>
+<body style="background-color: #fcfcfc;">
+    <!-- NAVBAR -->
+    {{>navbar}}
+
+    <div class="container-fluid d-flex">
+    <div class="ms-auto">
+        <!-- <button type="button" class="btn bg-orange text-light mt-2 bill" data-bs-toggle="modal" data-bs-target="#Bill">Bill <i class="bi bi-cash-stack"></i></button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="Bill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-orange" id="exampleModalLabel">Your Bill</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+               <h1 id="bill">Please order something!</h1>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn bg-orange text-light" data-bs-dismiss="modal">ok!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- <button type="button" class="btn bg-orange text-light mt-2 orders" data-bs-toggle="modal" data-bs-target="#Orders" id="cart">Your orders<i class="fas fa-shopping-cart"></i></button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="Orders" tabindex="-1" aria-labelledby="yourOrders" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-orange" id="yourOrders">Your Orders</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+               <ul class="list-group orders-list">
+                  <!-- js -->
+               </ul>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+    </div>     
+    </div>
+
+    <section class="container">
+        <div class="headings text-center">
+            <h2 class=" " style="font-size: 40px;">Menu</h2>
+        </div>
+        <div class="container rounded search d-flex">
+            <input id="searchFoods" type="text" class="fontAwesome form-control border text-center p-3 rounded-pill" placeholder="&#xF002; Try 'Pizza '"  style="font-family:Arial, FontAwesome"style="border: none;">
+        </div>
+    </section>
+    <section class="row g-4 p-5" id="dishes">
+        <!-- js -->
+        <!-- <div class="col-md-6 col-lg-3">
+            <div class="card item" >
+                <div class="card-body text-center"> 
+                    <h4 class="price">$${menu.price}</h4>
+                    <img src="${menu.img}" class="rounded-circle my-3" height=150>
+
+                    <h3 class="card-title title">${menu.food}</h3>
+                    <input type="text" class="qtty fontAwesome border-0 border-bottom mb-3 text-center form-control" name="qtty" placeholder="&#xf500; Enter Quantity" style="font-family: Arial, 'Font Awesome 5 Pro'" required>
+                    <button class="btnOrd" data-fp="${menu.price}" data-fn="${menu.food}">Order Now!</button>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    {{>footer}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="js/menu.js"></script>
+</body>
+</html>

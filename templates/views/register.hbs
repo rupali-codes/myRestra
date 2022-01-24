@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{>links}}
+	<title>Sign up</title>
+</head>
+<body>
+	<div class="container-fluid signup" id="#signup">
+	<h2 class="heading text-center my-5">Sign <span class="text-orange"> up</span></h2>
+		<form method="POST" action="/register" class="signup px-4 my-2">
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name">
+
+			<label for="phone">Phone Number</label>
+			<input type="text" name="phone" id="phone">
+
+			<label for="email">Email</label>
+			<input type="text" name="email" id="email">
+
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password">
+
+            <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block" style="background-color: #f86011;">Submit
+            <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+	        </button>
+            <sub >Already have an account? <a href="#signin" class="signinBtn sign">Sign in</a></sub>
+		</form>
+	</div>
+
+	<div class="container-fluid signin signup hidden" id="#signin">
+	<h2 class="heading text-center my-5">Sign <span class="text-orange"> in</span></h2>
+		<form method="POST" action="/signin" class="signup px-4 my-2">
+			<label for="email">Email</label>
+			<input type="text" name="email" id="email">
+
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password">
+
+            <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block	" style="background-color: #f86011;">Login
+            <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+	        </button>
+            <sub >Don't have an account? <a href="#signup" class="signupBtn sign">Sign up</a></sub>
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+	const signupBtn = document.querySelector('.signupBtn')
+	const signinBtn = document.querySelector('.signinBtn')
+	const title = document.querySelector('title')
+
+	const signup = document.querySelector('.signup')
+	const signin = document.querySelector('.signin')
+
+	signinBtn.addEventListener('click', () => {
+		signin.classList.remove('hidden')
+		signup.classList.add('hidden')
+		title.textContent = "Sign up"
+	})
+	signupBtn.addEventListener('click', () => {
+		signin.classList.add('hidden')
+		signup.classList.remove('hidden')
+		title.textContent = "Sign in"
+	})
+</script>
+
+</html>

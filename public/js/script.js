@@ -11,8 +11,7 @@ const markup = (name, img, price) => {
 	const html =  `
 	<div class="card m-2 rounded">
         <img src="images/${img}" class="card-img-top cImg rounded-circle" alt="...">
-        <div class="price">$${price}</div>
-
+				<h4 class="price w-50"><i class="fas fa-rupee-sign"></i>.${price}</h4>
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
       

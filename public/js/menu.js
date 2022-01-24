@@ -1,57 +1,19 @@
 const dishes = document.querySelector('#dishes');
 const searchFoods = document.querySelector('#searchFoods');
-const Footer = document.querySelector('#footer');
+const Footer = document.querySelector('footer');
 
 const orders = [];
+let searchMenu = []
 
-//food menu object
-let searchMenu = [
-    {
-        price: 120,
-        img: 'images/br1.jpg',
-        food: 'Pasta Rolls',
-    },
-    {
-        price: 20,
-        img: 'images/br2.jpg',
-        food: 'Tost',
-    },
-    {
-        price: 50,
-        img: 'images/br3.jpg',
-        food: 'Omelatte',
-    },
-    {
-        price: 35,
-        img: 'images/dr1.jpg',
-        food: 'Orange Juice',
-    },
-    {
-        price: 35,
-        img: 'images/dr2.jpeg',
-        food: 'Banana Shake',
-    },
-    {
-        price: 99,
-        img: 'images/dr3.jpg',
-        food: 'Apple Juice',
-    }
-];
-
-//added an id generator
-searchMenu = searchMenu.map((item, index) => ({...item, id: index }));
-
+//to be updated later
 const generateMarkup_menuItem = (menu) => {
    return `
         <div class="col-md-6 col-lg-3">
             <div class="card item" >
                 <div class="card-body text-center"> 
-                    <h4 class="price">$${menu.price}</h4>
-                    <img src="${menu.img}" class="rounded-circle my-3" height=150>
-
-                    <h3 class="card-title title">${menu.food}</h3>
-                    <input type="text" class="qtty fontAwesome border-0 border-bottom mb-3 text-center form-control" name="qtty" placeholder="&#xf500; Enter Quantity" style="font-family: Arial, 'Font Awesome 5 Pro'" required>
-                    <button class="btnOrd" data-fp="${menu.price}" data-fn="${menu.food}">Order Now!</button>
+                    <h4 class="price"><i class="fas fa-rupee-sign"></i>.${menu.price}</h4>
+                    <img src="data:image/jpg;base64, ${menu.image}" class="rounded-circle my-3" height=150>
+                    <h3 class="card-title title">${menu.name}</h3>
                 </div>
             </div>
         </div>
@@ -64,13 +26,31 @@ const render = (menu) => {
     menu.map(dish => dishes.insertAdjacentHTML('beforeend',  generateMarkup_menuItem(dish)))
 }
 
-//default
-render(searchMenu);
+const bs64 = (searchMenu) => {
+    searchMenu.forEach(item => {
+        const arrayBuffer = item.image.data
+        const base64String = btoa(String.fromCharCode(...new Uint8Array(item.image.data)));
+        item.image = base64String
+        // console.log(base64String)
+    })
+    render(searchMenu)
+}
+
+//fetching data from database
+fetch('http://localhost:8000/readFoods')
+    .then(res => res.json())
+    .then(data => {
+        searchMenu = [...data]
+        bs64(searchMenu)
+    })
+    .catch(err => {
+        console.log(err)
+    })
 
 //searching
 searchFoods.addEventListener('input', () => {
     const input = (searchFoods.value).toLowerCase();
-    const searchFood = searchMenu.filter(menu => menu.food.toLowerCase().includes(input));
+    const searchFood = searchMenu.filter(menu => menu.name.toLowerCase().includes(input));
     Footer.style.display = 'block';
     if(searchFood.length === 0){
         Footer.style.display = 'none';
