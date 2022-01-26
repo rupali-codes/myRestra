@@ -6,7 +6,7 @@
         <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
             <span class="fw-bold"></span>  <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse text-center text-md-start" id="navmenu">
+        <div class="collapse navbar-collapse text-center text-md-start justify-content-between" id="navmenu">
             <ul class="navbar-nav fw-bold fs-5">
                 <li class="nav-item mx-lg-2  p-2 p-lg-0 hover-border">
                     <a href="index" class="nav-link fw-bold text-dark">Home</a>
@@ -22,8 +22,15 @@
                 </li>
             </ul>
 
-        </div>
-        <ul class="navbar-nav  ms-auto fw-bold fs-5 d-none d-lg-block">
+        <!-- </div> -->
+        <ul class="navbar-nav  ms-auto fw-bold fs-5">
+            <li class="nav-item mx-lg-2  mt-2 p-2 p-lg-0 text-center">
+                <a href="index#BookTable" class="text-decoration-none">
+                    <div class="nav-item hover-border" id="book-table">
+                        Book a Table
+                    </div>
+                </a>
+            </li>
             <li class="nav-item mx-lg-2  p-2 p-lg-0 ">
                 <a href="register">
                     <div class="btn-dark border-0 nav-item fw-bold rounded-pill btn btn-light  btn position-relative" style="background-color: #f86011;">
@@ -32,13 +39,7 @@
                     </div>
                 </a>
             </li>
-            <li class="nav-item mx-lg-2  mt-2 p-2 p-lg-0 text-center">
-                <a href="index#BookTable" class="text-decoration-none">
-                    <div class="nav-item hover-border" id="book-table">
-                        Book a Table
-                    </div>
-                </a>
-            </li>
         </ul>
+        </div>
     </div>
 </nav>

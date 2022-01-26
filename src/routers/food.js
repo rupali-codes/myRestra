@@ -1,19 +1,3 @@
-/*
-	__Intro__
-   /         \
-	 Today is Jan 22, 2022 I leaving this project for now and I will come back to it when I am ready. 
-
-	__Bugs__
-   /        \
-
-	**__Enable upload img feature. 
-	-> Take img form Addfd and Editfd form, store to the database
-	-> Fetch img from database and show in menu (menu and admin pannel)
-	-> deply on heroku
-
-*/
-
-
 const express = require('express')
 const hbs = require('hbs')
 const path = require('path')
@@ -21,6 +5,7 @@ const multer = require('multer')
 const sharp = require('sharp')
 const base64 = require('base64-arraybuffer')
 const router = new express.Router()
+const auth = require('../middleware/auth')
 
 const Food = require('../models/food')
 
@@ -37,6 +22,17 @@ const upload = multer({
 	}
 })
 
+router.get('/adminPannel', auth, async (req, res) => {
+	try{
+		const foods = await Food.find({})
+		res.render('adminPannel')
+	}catch(err){
+		res.status(500).render('error', {
+			msg: "something	went wrong."
+		})
+	}
+})
+
 router.post('/addfd', upload.single('image'), async (req, res) => {
 	try{
 		const food = new Food(req.body)
@@ -50,7 +46,9 @@ router.post('/addfd', upload.single('image'), async (req, res) => {
 		res.render('adminPannel')
 	}catch(err){
 		console.log("err: ", err)
-		res.status(500).render('error')
+		res.status(500).render('error', {
+			msg: "Oops! Bad request :("
+		})
 	}
 })
 
@@ -73,7 +71,9 @@ router.post('/editfd', upload.single('image'), async (req, res) => {
 
 	}catch(err){
 		console.log(err)
-		res.status(500).render('error')
+		res.status(500).render('error', {
+			msg: "Oops! Bad request :("
+		})
 	}
 })
 
@@ -84,7 +84,9 @@ router.post('/deletefd', async (req, res) => {
 
 		res.render('adminPannel')
 	}catch(err){
-		res.status(500).render('error')
+		res.status(500).render('error', {
+			msg: "Oops! Bad request :("
+		})
 	}
 })
 
@@ -93,53 +95,47 @@ router.get('/readFoods', async (req, res) => {
 		const foods = await Food.find({})
 		res.send(foods)
 	}catch(err){
-		res.status(500).send("something went wrong.")
+		res.status(500).render('error',{
+			msg: "something went wrong."
+		})
 	}
 })
 
-router.get('/adminPannel', async (req, res) => {
-	try{
-		const foods = await Food.find({})
-		res.render('adminPannel')
-	}catch(err){
-		console.log(err)
-	}
-})
 
-//testing
-const storage = multer.diskStorage({
-	destination:'./tempImg/' ,
-	filename(req, file, cb){
-		cb(null, file.originalname + '-' + Date.now() + path.extname(file.originalname))
-	}
-})
+// //testing
+// const storage = multer.diskStorage({
+// 	destination:'./tempImg/' ,
+// 	filename(req, file, cb){
+// 		cb(null, file.originalname + '-' + Date.now() + path.extname(file.originalname))
+// 	}
+// })
 
-const uploadImg = multer({
-	storage: storage,
-	limits: {
-		fileSize: 1000000
-	},
-	fileFilter(req, file, cb){
-		if(!file.originalname.match(/\.(png|jpg|jpeg)$/)){
-			return cb(new Error("please upload a valid picture"))
-		}
-		cb(undefined, true)
-	}
-}).single('file')
+// const uploadImg = multer({
+// 	storage: storage,
+// 	limits: {
+// 		fileSize: 1000000
+// 	},
+// 	fileFilter(req, file, cb){
+// 		if(!file.originalname.match(/\.(png|jpg|jpeg)$/)){
+// 			return cb(new Error("please upload a valid picture"))
+// 		}
+// 		cb(undefined, true)
+// 	}
+// }).single('file')
 
 
-router.post('/testing' , async (req, res) => {
-	uploadImg(req, res, (err) => {
-		if(err){
-			console.log("ERR: ", err)
-		}else{
-			if(req.file === undefined){
-				console.log('no file selected')
-			}else{
-				console.log("sucess: file uploaded successfully!")
-			}
-		}
-	})
-})
+// router.post('/testing' , async (req, res) => {
+// 	uploadImg(req, res, (err) => {
+// 		if(err){
+// 			console.log("ERR: ", err)
+// 		}else{
+// 			if(req.file === undefined){
+// 				console.log('no file selected')
+// 			}else{
+// 				console.log("sucess: file uploaded successfully!")
+// 			}
+// 		}
+// 	})
+// })
 
 module.exports = router

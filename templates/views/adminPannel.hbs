@@ -6,12 +6,14 @@
 </head>
 <body>
 	<nav class="navbar navbar-light navbar-expand-lg px-4 py-2" style="z-index: 1; background-color: #fff4f2;" id="top">
-	    <div class="container-fluid justify-content-center">
+	    <div class="container-fluid justify-content-between">
 	        <a class="navbar-brand fw-bold fs-6" href="index"><img src="images/newLogo.png" alt="" class="rounded loggo"></a>
-	   
+	   		
+	   		<ul class="navbar-nav ms-auto fw-bold fs-5">
+            	{{{logout}}}
+        	</ul>
 	    </div>
 	</nav>
-	<!-- {{>navbar}} -->
 	<div class="text-center">
 		{{msg}}
 	</div>
@@ -24,7 +26,7 @@
 	<div class="container d-flex justify-content-center">
 		<button type="button" class="btn bg-orange text-light mx-1 mt-2 addBtn" data-bs-toggle="modal" data-bs-target="#AddFd">Add</button>
 
-		<button type="button" class="btn bg-orange text-light mx-1 mt-2 editBtn" data-bs-toggle="modal" data-bs-target="#EditFd">Edit</button>
+		<button type="button" class="btn bg-orange text-light mx-1 mt-2 editBtn" data-bs-toggle="modal" data-bs-target="#EditFd">Update</button>
 
 		<button type="button" class="btn bg-orange text-light mx-1 mt-2 delBtn" data-bs-toggle="modal" data-bs-target="#DeleteFd">Delete</button>
 
