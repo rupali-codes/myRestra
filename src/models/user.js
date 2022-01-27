@@ -61,6 +61,15 @@ userSchema.methods.generateAuthToken = async function(){
 	return token
 }
 
+//verify admin
+userSchema.statics.verifyAdmin = async (email, password, securityKey) => {
+	if(email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD && securityKey === process.env.SECURITY_KEY){
+		return true
+	}else{
+		throw new Error("Unable to verify you as Admin :(")
+	}
+}
+
 // finding user
 userSchema.statics.findUser = async (email, password) => {
 	const user = await User.findOne({email})

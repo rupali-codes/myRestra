@@ -175,6 +175,9 @@
     margin: 0 5rem;
     padding: 3rem;
 }
+.form input, .form select {
+    outline-color: #ff5500;
+}
 
 .req,
 #msg {

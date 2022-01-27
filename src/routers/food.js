@@ -39,9 +39,7 @@ router.post('/addfd', upload.single('image'), async (req, res) => {
 		const buffer = await sharp(req.file.buffer).resize({width:150, height: 150}).toFormat('png').toBuffer()
 		food.image = buffer
 		
-		console.log(buffer)
 		const bs64 = base64.encode(buffer)
-		// console.log(bs64)
 		await food.save()	
 		res.render('adminPannel')
 	}catch(err){

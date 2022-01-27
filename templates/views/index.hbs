@@ -9,6 +9,7 @@
 <body>
     <!-- section NAV & INTRO -->
     {{>navbar}}
+    {{{log}}}
 
     <section class="p-md-5" id="hero-sec">
         <div class="container">
@@ -90,15 +91,14 @@
     <section class="menu" id="shortMenu">
 
       <div class="menu-header">
-        <div>
           <h2 class="heading text-light">Most Populer Dishes</h2>
-        </div>
 
-        <a href="menu.html" class="button btn border-0 rounded-pill fw-bold position-relative">
+        <div class="ms-auto">
+            <a href="menu.html" class="button btn border-0 rounded-pill fw-bold position-relative ms-auto">
             Full Menu
             <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
-        </a>
-
+            </a>
+        </div>
       </div>
         <nav class="navbar navbar-expand-lg default-navbar">
           <div class="container-fluid">
@@ -150,7 +150,7 @@
                 <input type="text" id="guests" class="rounded-pill p-2 border-1 " placeholder="Number of Guest ">
                 <div>
                     <input type="date " placeholder="Date " class="rounded-pill p-2 border-1 ">
-                    <select id="type " class="rounded-pill p-2 border-1">
+                    <select id="type " class="rounded-pill p-2 mx-2 border-1">
                        <option>Break-fast</option>
                        <option>Lunch</option>
                        <option>Dinner</option>
@@ -171,7 +171,7 @@
 
 
     <!-- section FEEDBACK slider -->
-    <div id="reviews" class="carousel slide py-5" data-bs-ride="carousel">
+   <!--  <div id="reviews" class="carousel slide py-5" data-bs-ride="carousel">
         <h2 class="heading text-center my-5">What People say <span style="color: #f86011;">about us</span></h2>
         <div class="carousel-inner ">
             <div class="carousel-item active">
@@ -244,6 +244,20 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+    </div> -->
+
+    <div class="container">
+        <h2 class="heading text-center my-5">See what People say <span style="color: #f86011;">about us</span></h2>
+        <div class="d-flex">
+            <div>
+                <img src="images/unknown.jpg" height="120" class="rounded">
+            </div>
+            <div class="mx-4">
+                <h6 class="">Rupali</h6>
+                <h6>26/01/2022</h6>
+                <p class="text-wrap text-muted px-sm-2">This restaurant have an amazing taste I didn't realize that before. The staff members are so sweet. And I just love this restaurant I will surely come back again.</p>
+            </div>
+        </div>
     </div>
 
     {{>footer}}
