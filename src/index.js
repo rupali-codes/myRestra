@@ -19,7 +19,7 @@ const cookieParser = require('cookie-parser')
 const User = require('./models/user')
 const Food = require('./models/food')
 
-const port = process.env.PORT || 8000
+const port = process.env.PORT
 const app = express()
 
 const userRouter = require('./routers/user')
