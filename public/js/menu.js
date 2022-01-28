@@ -37,7 +37,7 @@ const bs64 = (searchMenu) => {
 }
 
 //fetching data from database
-fetch('http://localhost:8000/readFoods')
+fetch('/readFoods')
     .then(res => res.json())
     .then(data => {
         searchMenu = [...data]
