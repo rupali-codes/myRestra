@@ -26,7 +26,7 @@
 	</div>
 	<div class="container-fluid my-4">
 		<div class="text-center w-50 m-auto justify-content-center">
-			<img src="images/rb1.png" height= 130 class="rounded-circle" style="border: 0px solid #ff5500;">
+			<img src="images/robo.jpg" height= 130 class="rounded-circle" style="border: 0px solid #ff5500;">
 		</div>
 		<h1 class="text-center">Welcome to <span class="text-orange">Admin Pannel</span></h1>
 	</div>
@@ -140,7 +140,9 @@
 
 	<footer class="p-5">
 		<div class="text-center lead col-12">
-            Designed and Devloped with <i class="bi bi-heart-fill" style="color: #f86011;"></i> by Rupali & Eugene Ishado
+           <i class="bi bi-heart-fill" style="color: #f86011;"></i>
+           <i class="bi bi-heart-fill" style="color: #f86011;"></i>
+           <i class="bi bi-heart-fill" style="color: #f86011;"></i>
         </div>
 	</footer>
 
@@ -185,7 +187,7 @@
 		
 
 		//fetching data from database
-		fetch('http://localhost:8000/readFoods')
+		fetch('/readFoods')
 		    .then(res => res.json())
 		    .then(data => {
 		        // render(data)
