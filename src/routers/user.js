@@ -50,7 +50,7 @@ router.post('/register', async (req, res) => {
 			login_logout: logoutMarkup()
 		})
 	}catch(err){
-		console.log(err)
+		console.log("registration error: ", err)
 		res.status(500).render('error', {
 			msg: "something went wrong."
 		})
@@ -73,7 +73,7 @@ router.post('/signin', async (req, res) => {
 			login_logout: logoutMarkup()
 		})
 	}catch(err){
-		console.log(err)
+		console.log("login error: ".err)
 		res.status(500).render('error', {
 			msg: "something went wrong."
 		})
@@ -88,7 +88,7 @@ router.post('/adminLogin', async (req, res) => {
 		if(verify)		
 			res.render('adminPannel')
 	}catch(err){
-		console.log(err)
+		console.log("admin login error: ",err)
 		res.status(500).render('error', {
 			msg: err.message
 		})
