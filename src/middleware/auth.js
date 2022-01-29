@@ -17,9 +17,8 @@ const auth = async (req, res, next) => {
 		req.user = user
 		next()
 	}catch(err){
-		console.log("##########", err)
 		res.status(401).render('error', {
-			msg: "You're not a authorized user, please authenticate."
+			msg: "You're not logged in, Please login to continue"
 		})
 	}
 }

@@ -7,6 +7,8 @@ const dinner = document.querySelector('.dinner');
 const drinks = document.querySelector('.drinks');
 const fastfood = document.querySelector('.fastfood');
 
+const testimonials = document.querySelector('.testimonials')
+
 const markup = (name, img, price) => {
 	const html =  `
 	<div class="card m-2 rounded">
@@ -89,3 +91,37 @@ fastfood.addEventListener('click', () => {
 	markup('Dosa', 'jf3.jpg', 800)
 
 })
+
+/*comments*/
+//markup
+const testimonialMarkup = (comment) => {
+	return `
+		<div class="d-sm-flex">
+	      <div>
+	          <img src="images/unknown.jpg" height="110" class="rounded my-2">
+	      </div>
+	      <div class="mx-sm-4 my-3">
+	          <h6 class=""><span style="color: #f86011;">${comment.name}</span></h6>
+	          <p class="text-muted px-sm-2">${comment.msg}</p>
+	      </div>
+	  </div>
+	`
+}
+
+const renderTestimonials = (comments) => {
+    testimonials.innerHTML = '';
+    comments.map(comment => testimonials.insertAdjacentHTML('afterbegin',  testimonialMarkup(comment)))
+}
+
+//fetching data
+let threeComments = []
+fetch('/readTestimonials')
+	.then(res => res.json())
+	.then(data => {
+		//fetching last three results
+		threeComments = data.slice(0).slice(-3)
+		renderTestimonials(threeComments)
+	})
+	.catch(err => {
+		console.log("TESTIMONIAL ERROR: ",err)
+	})

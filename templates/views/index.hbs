@@ -9,7 +9,7 @@
 <body>
     <!-- section NAV & INTRO -->
     {{>navbar}}
-    {{{log}}}
+    <!-- {{{log}}} -->
 
     <section class="p-md-5" id="hero-sec">
         <div class="container">
@@ -94,7 +94,7 @@
           <h2 class="heading text-light">Most Populer Dishes</h2>
 
         <div class="ms-auto">
-            <a href="menu.html" class="button btn border-0 rounded-pill fw-bold position-relative ms-auto">
+            <a href="menu" class="button btn btn-sm border-0 rounded-pill fw-bold position-relative ms-auto">
             Full Menu
             <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
             </a>
@@ -102,7 +102,7 @@
       </div>
         <nav class="navbar navbar-expand-lg default-navbar">
           <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="w-50 m-auto" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <a class="btn nl breakfast active">Breakfast</a>
@@ -171,95 +171,36 @@
 
 
     <!-- section FEEDBACK slider -->
-   <!--  <div id="reviews" class="carousel slide py-5" data-bs-ride="carousel">
+    <div class="comments">
         <h2 class="heading text-center my-5">What People say <span style="color: #f86011;">about us</span></h2>
-        <div class="carousel-inner ">
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-5 text-center lead secondary  p-1 my-1 rounded my-md-0 mx-2 bg-light" id="feedback">
-                        <img src="images/customer-review3.webp" alt="">
-                        <div class="mt-5 text-dark">
-                            "Making a reservation at Délicious restaurant is easy and takes just a couple of minutes midst tree form seas.
-                        </div>
-                        <div class="pt-5">
-
-                            <i class="bi bi-star-fill" style="color: #f86011;"></i>
-                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                            <i class=" bi bi-star-fill " style="color: #f86011; "></i>
-                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                            <i class=" bi bi-star-fill " style="color: #f86011; "> </i>
-                            <span class="lead"> -Robert</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
+        <div class="container">
+            <div class="testimonials">
+               <div class="d-sm-flex">
+                  <div>
+                      <img src="images/unknown.jpg" height="110" class="rounded my-2">
+                  </div>
+                  <div class="mx-sm-4 my-3">
+                      <h6 class=""><span style="color: #f86011;">Rupali</span></h6>
+                      <p class="text-muted px-sm-2">Just awesome</p>
+                  </div>
+              </div>
             </div>
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-5 text-center lead secondary  p-3 my-3 rounded my-md-0 mx-2 bg-light" id="feedback">
-                        <img src="images/customer-review2.webp" alt="">
-                        <div class="mt-5 text-dark">
-                            "Making a reservation at Délicious restaurant is easy and takes just a couple of minutes midst tree form seas.
-                        </div>
-                        <div class="pt-5">
+            <div class="container">
+                <h4 class="heading mt-5">Wanna <span style="color: #f86011;">say</span> something?</h4>
+                <form method="POST" action="/addTestimonial" class="signup my-2">
+                    <label>Name</label>
+                    <input type="text" name="name">
 
-                            <i class="bi bi-star-fill" style="color: #f86011;"></i>
-                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                            <i class=" bi bi-star-fill " style="color: #f86011; "></i>
-                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                            <i class=" bi bi-star-fill " style="color: #f86011; "> </i>
-                            <span class="lead"> -Robert</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-5 text-center lead secondary  p-3 my-3 rounded my-md-0 mx-2 bg-light" id="feedback">
-                        <img src="images/customer-review1.webp" alt="">
-                        <div class="mt-5 text-dark">
-                            "Making a reservation at Délicious restaurant is easy and takes just a couple of minutes midst tree form seas.
-                        </div>
-                        <div class="pt-5">
+                    <label class="py-3">Message</label>
+                    <input type="textarea" name="msg">
 
-                            <i class="bi bi-star-fill" style="color: #f86011;"></i>
-                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                            <i class=" bi bi-star-fill " style="color: #f86011; "></i>
-                            <i class="bi bi-star-fill " style="color: #f86011;"></i>
-                            <i class=" bi bi-star-fill " style="color: #f86011; "> </i>
-                            <span class="lead"> -Robert</span>
-                        </div>
-
-                    </div>
-                </div>
+                    <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block" style="background-color: #f86011;">Submit
+                    <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+                    </button>
+                </form>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#reviews" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#reviews" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-    </div> -->
-
-    <!--|||| TO BE IMPLEMENTED LATER ||||-->
-    <!-- <div class="container">
-        <h2 class="heading text-center my-5">See what People say <span style="color: #f86011;">about us</span></h2>
-        <div class="d-flex">
-            <div>
-                <img src="images/unknown.jpg" height="120" class="rounded">
-            </div>
-            <div class="mx-4">
-                <h6 class="">Rupali</h6>
-                <h6>26/01/2022</h6>
-                <p class="text-wrap text-muted px-sm-2">This restaurant have an amazing taste I didn't realize that before. The staff members are so sweet. And I just love this restaurant I will surely come back again.</p>
-            </div>
-        </div>
-    </div> -->
+    </div>
 
     {{>footer}}
 

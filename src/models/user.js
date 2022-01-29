@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
 	phone: {
 		type: String,
 		required: true,
-		length: 10,
+		minlength: 10,
 		validate: (value) => {
 			if(!validator.isNumeric(value))
 				throw new Error("Please Enter a valid Phone Number")
@@ -43,15 +43,6 @@ const userSchema = new mongoose.Schema({
 		}
 	}]
 })
-//hiding sensitive information from user
-// userSchema.methods.toJSON = function() {
-// 	const userObj = this.toObject()
-
-// 	delete userObj.password
-// 	delete userObj.tokens
-
-// 	return userObj
-// }
 
 //generating authentication tokens
 userSchema.methods.generateAuthToken = async function(){

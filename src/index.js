@@ -1,13 +1,3 @@
-/*
-	*****************GOAL JAN 24, 2022******************
-	* YOU WILL BE IMPLEMENTING LOGOUT FEATURE 		   *
-	* CHECK WHETHER THE SITE IS RUNNING FINE OR NOT    *
-	* IF YOU FIND ANY BUG, SOLVE IT FIRST              *
-	* ELSE YOU WILL BE HOSTING MYRESTRA ON HEROKU      *
-	*****************HAPPY LEARNING!********************
-
-*/
-
 require('dotenv').config()
 require('./db/connection')
 const express = require('express')
@@ -18,12 +8,14 @@ const cookieParser = require('cookie-parser')
 
 const User = require('./models/user')
 const Food = require('./models/food')
+const Testimonial = require('./models/testimonial')
 
 const port = process.env.PORT
 const app = express()
 
 const userRouter = require('./routers/user')
 const foodRouter = require('./routers/food')
+const testimonialRouter = require('./routers/testimonial')
 
 const publicDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -35,6 +27,7 @@ app.use(express.static(publicDirPath))
 app.use(cookieParser())
 app.use(userRouter)
 app.use(foodRouter)
+app.use(testimonialRouter)
 
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
