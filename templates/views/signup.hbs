@@ -11,13 +11,12 @@
 	   		
 	   		<ul class="navbar-nav ms-auto fw-bold fs-5">
             	<li class="nav-item mx-lg-2  p-2 p-lg-0 ">
-	                <!-- <a href="#">
-	                    <div class="btn-dark border-0 nav-item fw-bold rounded-pill btn btn-light  btn position-relative" style="background-color: #f86011;">
-	                   	Admin Login
-	                    <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
-	                    </div>
-	                </a> -->
-	                <button type="button" class="btn bg-orange text-light mx-1 mt-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#admin-login">Admin login</button>
+	                <a href="login">
+		                <div class="btn-dark border-0 nav-item fw-bold rounded-pill btn btn-light  btn position-relative" style="background-color: #f86011;">
+		                Login
+		                <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+		                </div>
+		            </a>	                
             	</li>
         	</ul>
 	    </div>
@@ -72,48 +71,10 @@
             <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block" style="background-color: #f86011;">Submit
             <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
 	        </button>
-            <sub >Already have an account? <a href="#signin" class="signinBtn sign">Sign in</a> here</sub>
-		</form>
-	</div>
-
-	<!-- login form -->
-	<div class="container-fluid signin signup hidden" id="signin">
-	<h2 class="heading text-center my-5">Sign <span class="text-orange"> in</span></h2>
-		<form method="POST" action="/signin" class="signup px-4 my-2">
-			<label for="email">Email</label>
-			<input type="text" name="email">
-
-			<label for="password">Password</label>
-			<input type="password" name="password">
-
-            <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block	" style="background-color: #f86011;">Login
-            <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
-	        </button>
-            <sub >Don't have an account? <a href="#signup" class="signupBtn sign">Sign up</a> here</sub>
+            <sub >Already have an account? <a href="login" class="signinBtn sign">Sign in</a> here</sub>
 		</form>
 	</div>
 </body>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-	const signupBtn = document.querySelector('.signupBtn')
-	const signinBtn = document.querySelector('.signinBtn')
-	const title = document.querySelector('title')
-
-	const signup = document.querySelector('#signup')
-	const signin = document.querySelector('#signin')
-
-	signinBtn.addEventListener('click', () => {
-		signin.classList.remove('hidden')
-		signup.classList.add('hidden')
-		title.textContent = "Sign up"
-	})
-	signupBtn.addEventListener('click', () => {
-		signin.classList.add('hidden')
-		signup.classList.remove('hidden')
-		title.textContent = "Sign in"
-	})
-</script>
-
 </html>

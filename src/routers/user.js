@@ -6,12 +6,25 @@ const auth = require('../middleware/auth')
 
 const User = require('../models/user')
 
+const signupMarkup = () => {
+	return `
+		<li class="nav-item mx-lg-2  p-2 p-lg-0 ">
+            <a href="signup">
+                <div class="btn-dark border-0 nav-item fw-bold rounded-pill btn btn-light  btn position-relative" style="background-color: #f86011;">
+                Signup
+                <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+                </div>
+            </a>
+        </li>
+		`
+}
+
 const loginMarkup = () => {
 	return `
 		<li class="nav-item mx-lg-2  p-2 p-lg-0 ">
-            <a href="register">
+            <a href="login">
                 <div class="btn-dark border-0 nav-item fw-bold rounded-pill btn btn-light  btn position-relative" style="background-color: #f86011;">
-                Signup | Signin
+                Login
                 <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
                 </div>
             </a>
@@ -32,13 +45,12 @@ const logoutMarkup = () => {
 	`
 }
 
-router.post('/register', async (req, res) => {
+router.post('/signup', async (req, res) => {
 	try{
 		const user  = new User(req.body)
 		const token = await user.generateAuthToken()
 		await user.save()
-		// console.log("token", token)
-
+		
 		//cookies
 		res.cookie("jwt", token, {
 			expires: new Date(Date.now() + 50000),
@@ -47,7 +59,7 @@ router.post('/register', async (req, res) => {
 
 		res.status(200)
 		res.render('index', {
-			login_logout: logoutMarkup()
+			login_logout: loginMarkup()
 		})
 	}catch(err){
 		console.log("registration error: ", err)
@@ -99,7 +111,7 @@ router.post('/adminLogin', async (req, res) => {
 router.get('/adminLogout', async (req, res) => {
 	// await User.logoutAdmin()
 	try{
-		res.render('register')
+		res.render('login')
 	}catch(err){
 		res.status(500).render('error', {
 			msg: "something went wrong."
@@ -113,30 +125,42 @@ router.get('/logout', auth, async (req, res) => {
 		req.user.tokens = req.user.tokens.filter((token) => {
 			return token.token !== req.token
 		})
+		const token = await req.user.generateAuthToken()
+
+		res.cookie("jwt", token, {
+			expires: new Date(Date.now() +  10),
+			httpOnly: true,
+			// secure: true
+		})
 
 		await req.user.save()
 		res.render('index', {
-			login_logout: loginMarkup()
+			login_logout: signupMarkup()
 		})
 	}catch(err){
+		console.log(err)
 		res.status(500).send()
 	}
 })
 
 router.get('/', (req, res) => {
 	res.render('index', {
-		login_logout: loginMarkup()
+		login_logout: signupMarkup()
 	})
 })
 
 router.get('/index', (req, res) => {
 	res.render('index', {
-		login_logout: loginMarkup()
+		login_logout: signupMarkup()
 	})
 })
 
-router.get('/register', (req, res) => {
-	res.render('register')
+router.get('/signup', (req, res) => {
+	res.render('signup')
+})
+
+router.get('/login', (req, res) => {
+	res.render('login')
 })
 
 router.get('/about-us', (req, res) => {

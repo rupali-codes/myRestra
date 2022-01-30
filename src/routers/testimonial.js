@@ -29,18 +29,23 @@ router.post('/addTestimonial',auth, async (req, res) => {
 	}
 })
 
-router.post('/updateTestimonials', async (req, res) => {
+//to be changed later
+router.get('/editTestimonial', async (req, res) => {
 	try{	
-		
+		res.render('error', {
+			msg: "Please contact administrater."
+		})
 	}catch(err){
 		console.log("Testimonials error: ", err)
 		res.status(500).send()
 	}
 })
 
-router.post('/deleteTestimonials', async (req, res) => {
+router.get('/deleteTestimonial', async (req, res) => {
 	try{	
-		
+		res.render('error', {
+			msg: "Please contact administrater."
+		})
 	}catch(err){
 		console.log("Testimonials error: ", err)
 		res.status(500).send()

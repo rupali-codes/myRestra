@@ -96,15 +96,28 @@ fastfood.addEventListener('click', () => {
 //markup
 const testimonialMarkup = (comment) => {
 	return `
-		<div class="d-sm-flex">
-	      <div>
-	          <img src="images/unknown.jpg" height="110" class="rounded my-2">
-	      </div>
-	      <div class="mx-sm-4 my-3">
-	          <h6 class=""><span style="color: #f86011;">${comment.name}</span></h6>
-	          <p class="text-muted px-sm-2">${comment.msg}</p>
-	      </div>
-	  </div>
+		<div class="">
+           <div class="d-sm-flex">
+              <div>
+                  <img src="images/unknown.jpg" height="110" class="rounded my-2">
+              </div>
+              <div class="mx-sm-4 my-3">
+                  <h6 class=""><span style="color: #f86011;">${comment.name}</span></h6>
+                  <p class="text-muted px-sm-2">${comment.msg} Wow yrr kasie create kiya itna badhiya website ye to ekdm badhiya hai</p>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                          <a href="/editTestimonial" class="text-orange" style="text-decoration: none;">
+                              <i class="bi bi-pencil-square"></i>
+                            </a>
+
+                            <a href="/deleteTestimonial" class="text-orange mx-2" style="text-decoration: none;">
+                              <i class="bi bi-archive-fill"></i>
+                            </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+       </div>
 	`
 }
 
