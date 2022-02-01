@@ -22,40 +22,10 @@
 	    </div>
 	</nav>
 
-	<!-- admin login model -->
-	<div class="modal fade" id="admin-login" tabindex="-1" aria-labelledby="admin_login" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title text-orange" id="admin_login">Admin Login</h5>
-	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-	      </div>
-	      <div class="modal-body">
-	       <form method="POST" action="/adminLogin" class="signup px-4 my-2">
-				<label for="email">Email</label>
-				<input type="text" name="email">
-
-				<label for="password">Password</label>
-				<input type="password" name="password">
-
-				<label for="securityKey">Security key</label>
-				<input type="password" name="securityKey">
-
-	            <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block	" style="background-color: #f86011;">Login
-	            <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
-		        </button>
-			</form>
-	      </div>
-	  
-	    </div>
-	  </div>
-	</div>
-
-
 	<!-- sign up form -->
 	<div class="container-fluid signup" id="signup">
 	<h2 class="heading text-center my-3">Sign <span class="text-orange"> up</span></h2>
-		<form method="POST" action="/register" class="signup px-4 my-2">
+		<form method="POST" action="/signup" class="signup px-4 my-2">
 			<label for="name">Name</label>
 			<input type="text" name="name">
 

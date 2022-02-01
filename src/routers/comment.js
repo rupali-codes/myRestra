@@ -2,7 +2,7 @@ const express = require('express')
 const multer = require('multer')
 const router = new express.Router()
 const auth = require('../middleware/auth')
-const Testimonial = require('../models/testimonial')
+const Comment = require('../models/comment')
 
 const logoutMarkup = () => {
 	return `<li class="nav-item mx-lg-2  p-2 p-lg-0 ">
@@ -15,47 +15,55 @@ const logoutMarkup = () => {
 		    </li>`
 }
 
-router.post('/addTestimonial',auth, async (req, res) => {
+router.post('/addComment',auth, async (req, res) => {
 	try{	
-		console.log(req.user.name)
-		const testimonial = new Testimonial(req.body)
-		await testimonial.save()
+		const comment = new Comment(req.body)
+		comment.name = req.user.name
+		await comment.save()
 		res.render('index', {
 			login_logout: logoutMarkup
 		})
 	}catch(err){
-		console.log("Testimonials error: ", err)
+		console.log("Comments error: ", err)
 		res.status(500).send({success: false})
 	}
 })
 
 //to be changed later
-router.get('/editTestimonial', async (req, res) => {
+router.post('/editComment', auth, async (req, res) => {
 	try{	
-		res.render('error', {
-			msg: "Please contact administrater."
+		const name = req.user.name
+		const comment = await Comment.findOneAndUpdate({name}, {msg: req.body.msg})
+
+		await comment.save()
+		res.render('index', {
+			login_logout: logoutMarkup
 		})
 	}catch(err){
-		console.log("Testimonials error: ", err)
+		console.log("Comments error: ", err)
+		res.status(500).render('error', {
+			msg: err.message
+		})
+	}
+})
+
+router.post('/deleteComment',auth, async (req, res) => {
+	try{	
+		const name = req.user.name
+		const comment = await Comment.findOneAndDelete({name})
+		res.render('index', {
+			login_logout: logoutMarkup
+		})
+	}catch(err){
+		console.log("Comments error: ", err)
 		res.status(500).send()
 	}
 })
 
-router.get('/deleteTestimonial', async (req, res) => {
-	try{	
-		res.render('error', {
-			msg: "Please contact administrater."
-		})
-	}catch(err){
-		console.log("Testimonials error: ", err)
-		res.status(500).send()
-	}
-})
-
-router.get('/readTestimonials', async (req, res) => {
+router.get('/readComments', async (req, res) => {
 	try{
-		const testimonials = await Testimonial.find({})
-		res.send(testimonials)
+		const comments = await Comment.find({})
+		res.send(comments)
 	}catch(err){
 		res.status(500).render('error', {
 			msg: "something went wrong."

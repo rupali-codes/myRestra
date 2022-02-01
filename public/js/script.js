@@ -103,18 +103,7 @@ const testimonialMarkup = (comment) => {
               </div>
               <div class="mx-sm-4 my-3">
                   <h6 class=""><span style="color: #f86011;">${comment.name}</span></h6>
-                  <p class="text-muted px-sm-2">${comment.msg} Wow yrr kasie create kiya itna badhiya website ye to ekdm badhiya hai</p>
-                  <div class="d-flex justify-content-between">
-                      <div>
-                          <a href="/editTestimonial" class="text-orange" style="text-decoration: none;">
-                              <i class="bi bi-pencil-square"></i>
-                            </a>
-
-                            <a href="/deleteTestimonial" class="text-orange mx-2" style="text-decoration: none;">
-                              <i class="bi bi-archive-fill"></i>
-                            </a>
-                      </div>
-                  </div>
+                  <p class="text-muted px-sm-2">${comment.msg}</p>
               </div>
           </div>
        </div>
@@ -128,7 +117,7 @@ const renderTestimonials = (comments) => {
 
 //fetching data
 let threeComments = []
-fetch('/readTestimonials')
+fetch('/readComments')
 	.then(res => res.json())
 	.then(data => {
 		//fetching last three results
@@ -136,5 +125,5 @@ fetch('/readTestimonials')
 		renderTestimonials(threeComments)
 	})
 	.catch(err => {
-		console.log("TESTIMONIAL ERROR: ",err)
+		console.log("COMMENTS ERROR: ",err)
 	})

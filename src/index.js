@@ -8,14 +8,14 @@ const cookieParser = require('cookie-parser')
 
 const User = require('./models/user')
 const Food = require('./models/food')
-const Testimonial = require('./models/testimonial')
+const comment = require('./models/comment')
 
 const port = process.env.PORT
 const app = express()
 
 const userRouter = require('./routers/user')
 const foodRouter = require('./routers/food')
-const testimonialRouter = require('./routers/testimonial')
+const commentRouter = require('./routers/comment')
 
 const publicDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -27,7 +27,7 @@ app.use(express.static(publicDirPath))
 app.use(cookieParser())
 app.use(userRouter)
 app.use(foodRouter)
-app.use(testimonialRouter)
+app.use(commentRouter)
 
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)

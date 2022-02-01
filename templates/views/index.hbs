@@ -102,8 +102,13 @@
       </div>
         <nav class="navbar navbar-expand-lg default-navbar">
           <div class="container-fluid">
-            <div class="w-50 m-auto" id="navbarNav">
-              <ul class="navbar-nav">
+
+             <button class="navbar-toggler text-light ms-auto border" type="button" data-bs-toggle="collapse" data-bs-target="#populerDishes">
+            <i class="bi bi-arrow-down-circle"></i>
+             </button>
+
+           <div class="collapse navbar-collapse text-center text-md-start justify-content-between" id="populerDishes">
+              <ul class="navbar-nav navbar-nav fw-bold fs-5">
                 <li class="nav-item">
                   <a class="btn nl breakfast active">Breakfast</a>
                 </li>
@@ -170,56 +175,51 @@
     </section>
 
 
-    <!-- section FEEDBACK slider -->
+    <!-- section COMMENT -->
     <div class="comments">
         <h2 class="heading text-center my-5">What People say <span style="color: #f86011;">about us</span></h2>
         <div class="container">
             <div class="testimonials">
-               <div>
-                   <div class="d-sm-flex">
-                      <div>
-                          <img src="images/unknown.jpg" height="110" class="rounded my-2">
-                      </div>
-                      <div class="mx-sm-4 my-3">
-                          <div class="d-flex justify-content-between">
-                              <h6 class=""><span style="color: #f86011;">Rupali</span></h6>
-                              <div>
-                                  <a href="/editTestimonial" class="text-orange" style="text-decoration: none;">
-                                      <i class="bi bi-pencil-square"></i>
-                                    </a>
+              
+            </div>
+            <div class="d-flex justify-content-between">
+                      <div class="d-flex">             
+                          <button type="button" class="btn border-0 text-orange" data-bs-toggle="modal" data-bs-target="#editComment"><i class="bi bi-pencil-square"></i> Edit</button>
 
-                                    <a href="/deleteTestimonial" class="text-orange" style="text-decoration: none;">
-                                      <i class="bi bi-archive-fill"></i>
-                                    </a>
+                          <div class="modal fade" id="editComment" tabindex="-1" aria-labelledby="Edit comment" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title text-orange" id="Edit comment">Edit comment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+
+                                  <div class="modal-body">
+                                   <form method="POST" action="/editComment" class="signup px-4 my-2">
+                                        <label for="msg">Message</label>
+                                        <input type="textarea" name="msg">
+                                        
+                                        <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block" style="background-color: #f86011;">Submit
+                                        <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+                                        </button>                                   
+                                    </form>
+                                  </div>                              
+                                </div>
                               </div>
                           </div>
-                          <p class="text-muted px-sm-2">Just awesome </p>
-                      </div>
-                  </div>
-               </div>
 
-               <div class="mt-3">
-                   <div class="d-sm-flex">
-                      <div>
-                          <img src="images/unknown.jpg" height="110" class="rounded my-2">
-                      </div>
-                      <div class="mx-sm-4 my-3">
-                          <h6 class=""><span style="color: #f86011;">Rupali</span></h6>
-                          <p class="text-muted px-sm-2">Just awesome </p>
+                          <form method="POST" action="/deleteComment">
+                            <button class="btn border-0 p-1 text-orange">                    
+                              <i class="bi bi-archive-fill"></i> Delete
+                            </button>
+                          </form>
                       </div>
                   </div>
-                  <div>
-                      <button class="btn btn-light btn-sm text-orange" style="border: 1px solid #ff5500;">Edit</button>
-                      <button class="btn btn-light btn-sm text-orange" style="border: 1px solid #ff5500;">Delete</button>
-                  </div>
-               </div>
-            </div>
+
             <div class="container">
                 <h4 class="heading mt-5">Wanna <span style="color: #f86011;">say</span> something?</h4>
-                <form method="POST" action="/addTestimonial" class="signup my-2">
-                    <label>Name</label>
-                    <input type="text" name="name">
-
+                <form method="POST" action="/addComment" class="signup my-2" id="addComment">
+                    <input type="hidden" name="id" value="">
                     <label class="py-3">Message</label>
                     <input type="textarea" name="msg">
 
