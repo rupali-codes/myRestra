@@ -2,6 +2,7 @@ const express = require('express')
 const multer = require('multer')
 const router = new express.Router()
 const auth = require('../middleware/auth')
+const logoutMarkup = require('../functions/logout_markup')
 
 
 const User = require('../models/user')
@@ -30,19 +31,6 @@ const loginMarkup = () => {
             </a>
         </li>
 		`
-}
-
-const logoutMarkup = () => {
-	return `
-		<li class="nav-item mx-lg-2  p-2 p-lg-0 ">
-            <a href="logout">
-                <div class="btn-dark border-0 nav-item fw-bold rounded-pill btn btn-light  btn position-relative" style="background-color: #f86011;">
-                Logout
-                <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
-                </div>
-            </a>
-        </li>
-	`
 }
 
 router.post('/signup', async (req, res) => {
@@ -88,6 +76,26 @@ router.post('/login', async (req, res) => {
 		console.log("login error: ".err)
 		res.status(500).render('error', {
 			msg: "something went wrong."
+		})
+	}
+})
+
+router.post('/resetPassword', async (req, res) => {
+	try{
+		const email = req.body.email
+		const user = await User.findOne({email})
+
+		if(!user){
+			throw new Error("User not found.")
+		}
+		user.password = req.body.password
+		await user.save()
+		res.render('login', {
+			alert: '<script>alert("Password updated successfully")</script>' 
+		})
+	}catch(err){
+		res.status(401).render('error', {
+			msg: err.message
 		})
 	}
 })
@@ -163,16 +171,22 @@ router.get('/login', (req, res) => {
 	res.render('login')
 })
 
-router.get('/about-us', (req, res) => {
-	res.render('about')
+router.get('/about-us', auth, (req, res) => {
+	res.render('about', {
+		login_logout: logoutMarkup
+	})
 })
 
-router.get('/contact-us', (req, res) => {
-	res.render('contact')
+router.get('/contact-us', auth, (req, res) => {
+	res.render('contact', {
+		login_logout: logoutMarkup
+	})
 })
 
-router.get('/menu', (req, res) => {
-	res.render('menu')
+router.get('/menu', auth, auth, (req, res) => {
+	res.render('menu', {
+		login_logout: logoutMarkup
+	})
 })
 
 module.exports = router

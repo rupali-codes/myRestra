@@ -149,29 +149,28 @@
         <div class="form">
             <div>
                 <h2 class="heading ">Book a Table</h2>
-                <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodquis nostrud exeur.</p>
+                <p class="para">You're always welcomed to <span class="text-orange">MyRestra</span> please come and enjoy the true Taste.</p>
             </div>
-            <form>
-                <input type="text" id="guests" class="rounded-pill p-2 border-1 " placeholder="Number of Guest ">
-                <div>
-                    <input type="date " placeholder="Date " class="rounded-pill p-2 border-1 ">
-                    <select id="type " class="rounded-pill p-2 mx-2 border-1">
-                       <option>Break-fast</option>
-                       <option>Lunch</option>
-                       <option>Dinner</option>
-                    </select>
-                </div>
+            <form method="POST" action="/bookTable">
+                <select id="type " class="rounded-pill p-2 mx-2" name="choose">
+                   <option>Break-fast</option>
+                   <option>Lunch</option>
+                   <option>Dinner</option>
+                </select>
+                <input type="number" id="guests" class="rounded-pill p-2 mt-3" placeholder="Number of Guest " name="guests">
+                <input type="date " placeholder="Date: YYYY/MM/DD " class="rounded-pill p-2 " name="date">
+                <input type="text " id="phone " class="rounded-pill p-2 " placeholder="Phone: +91xxxxxxxxxx " name="phone">
+                <textarea id="msg" placeholder="Message " name="msg" class="p-2 mt-2"></textarea>
+                <!-- <input type="textarea" name="msg" placeholder="Message" class="p-2" id="msg"> -->
 
-                <input type="text " id="phone " class="rounded-pill p-2 border-1 " placeholder="Phone No. ">
-                <textarea id="msg" placeholder="Message "></textarea>
-
-                <button class="button req position-relative rounded-pill">Send Request
+                <button class="button req position-relative rounded-pill" value="submit">Send Request
                     <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
 
                 </button>
             </form>
         </div>
 
+        {{{alert}}}
     </section>
 
 

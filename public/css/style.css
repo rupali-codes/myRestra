@@ -191,8 +191,10 @@
     margin: 0 5rem;
     padding: 3rem;
 }
-.form input, .form select {
-    outline-color: #ff5500;
+.form input, .form select, .form textarea {
+    outline: none;
+    border:  none;
+    box-shadow: 1px 2px 5px 1px lightgray;
 }
 
 .req,
@@ -477,7 +479,6 @@ footer{
     border-bottom: 2px solid #ff5500;
     padding: 2px 10px;
     outline:  none;
-
 }
 .signup textarea{
     display: block;
@@ -497,7 +498,3 @@ footer{
 .err{
     width: 75%;
 }
-/*.comments{
-    background-color: #4d2600; 
-    color: white;
-}*/

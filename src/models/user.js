@@ -16,8 +16,8 @@ const userSchema = new mongoose.Schema({
 		required: true,
 		minlength: 10,
 		validate: (value) => {
-			if(!validator.isNumeric(value))
-				throw new Error("Please Enter a valid Phone Number")
+			if(validator.isMobilePhone(value))
+				throw new Error("Invalid phone number")
 		}
 	},
 	email: {

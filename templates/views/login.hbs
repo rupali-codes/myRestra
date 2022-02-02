@@ -57,6 +57,7 @@
 
 			<label for="password">Password</label>
 			<input type="password" name="password">
+			<sup class="text-decoration-underline text-primary" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#reset-password"> Forget passwrd?</sup>
 
             <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block	" style="background-color: #f86011;">Login
             <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
@@ -64,6 +65,33 @@
             <sub >Don't have an account? <a href="signup" class="signupBtn sign">Sign up</a> here</sub>
 		</form>
 	</div>
+
+	<!-- forget password -->
+	<div class="modal fade" id="reset-password" tabindex="-1" aria-labelledby="reset_pasword" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title text-orange" id="reset_pasword">Reset your password</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	       <form method="POST" action="/resetPassword" class="signup px-4 my-2">
+	       		<label for="email">Email</label>
+				<input type="text" name="email">
+
+				<label for="password">New password</label>
+				<input type="password" name="password">
+
+	            <button class="btn btn-dark border-0 rounded-pill fw-bold position-relative d-block	" style="background-color: #f86011;">Update password
+	            <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
+		        </button>
+			</form>
+	      </div>
+	  
+	    </div>
+	  </div>
+	</div>
+	{{{alert}}}
 </body>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

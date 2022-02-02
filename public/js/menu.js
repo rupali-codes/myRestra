@@ -66,8 +66,8 @@ searchFoods.addEventListener('input', () => {
 
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@___BILLING___@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-
-
+/*
+//comment this code out when needed
 const orderBtns = document.querySelectorAll('.btnOrd');
 const bill = document.querySelector('.bill');
 const billText = document.querySelector('#bill');
@@ -123,9 +123,10 @@ bill.addEventListener('click', () => {
     }
    
 })
-
+*/
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@___CART___@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-
+/*
+//comment this out when needed
 const cart = document.querySelector('#cart');
 const ordersList = document.querySelector('.orders-list');
 const cancel = document.querySelector('.cancel');
@@ -159,4 +160,4 @@ ordersList.addEventListener('click', (e) => {
    const cnl = (e.target.closest('.cancel'))
 })
 
-
+*/
