@@ -52,7 +52,7 @@ router.post('/signup', async (req, res) => {
 	}catch(err){
 		console.log("registration error: ", err)
 		res.status(500).render('error', {
-			msg: "something went wrong."
+			msg: err.message
 		})
 	}
 })
@@ -73,9 +73,8 @@ router.post('/login', async (req, res) => {
 			login_logout: logoutMarkup()
 		})
 	}catch(err){
-		console.log("login error: ".err)
 		res.status(500).render('error', {
-			msg: "something went wrong."
+			msg: err.message
 		})
 	}
 })
@@ -122,7 +121,7 @@ router.get('/adminLogout', async (req, res) => {
 		res.render('login')
 	}catch(err){
 		res.status(500).render('error', {
-			msg: "something went wrong."
+			msg: err.message
 		})
 	}
 })
@@ -147,7 +146,9 @@ router.get('/logout', auth, async (req, res) => {
 		})
 	}catch(err){
 		console.log(err)
-		res.status(500).send()
+		res.status(500).render('error', {
+			msg: err.message
+		})
 	}
 })
 

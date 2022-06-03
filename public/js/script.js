@@ -18,7 +18,7 @@ const markup = (name, img, price) => {
           <h5 class="card-title">${name}</h5>
       
         </div>
-        <button class="btnOrd m-auto mb-3">Order now!</button>
+        <button class="btnOrd m-auto mb-3"></button>
     </div>
 	`;
 	menu.insertAdjacentHTML('beforeend', html)

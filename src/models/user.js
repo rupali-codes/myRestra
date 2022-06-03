@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
 		minlength: 10,
 		validate: (value) => {
 			if(validator.isMobilePhone(value))
-				throw new Error("Invalid phone number")
+				throw new Error("Country code is missing or the phone number is valid.")
 		}
 	},
 	email: {
