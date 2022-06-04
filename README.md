@@ -30,22 +30,18 @@
 
 ## How does it looks like
 
-__Landing page__
-![Landing page](.public/images/home.jpg)
+![Landing page](./public/images/home.jpg)
 
-__Quick menu__
-![Landing page](.public/images/short-menu.jpg)
+![Quick menu](./public/images/short-menu.jpg)
 
-__Book a table__
-![Landing page](.public/images/book-table.jpg)
+![Book table](./public/images/book-table.jpg)
 
-__Quick Links__
-![Landing page](.public/images/footer.jpg)
+![footer](./public/images/footer.jpg)
 
 [View site](http://its-myrestra-web.herokuapp.com/)
 
 
-## Thanks for visiting! 
+__Thanks for visiting :)__ 
 
 
 
