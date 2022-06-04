@@ -31,23 +31,21 @@
 ## How does it looks like
 
 __Landing page__
-[Landing page](.public/images/home.jpg)
+![Landing page](.public/images/home.jpg)
 
 __Quick menu__
-[Landing page](.public/images/short-menu.jpg)
+![Landing page](.public/images/short-menu.jpg)
 
 __Book a table__
-[Landing page](.public/images/book-table.jpg)
+![Landing page](.public/images/book-table.jpg)
 
 __Quick Links__
-[Landing page](.public/images/footer.jpg)
+![Landing page](.public/images/footer.jpg)
 
-
-## *Take a look*
 [View site](http://its-myrestra-web.herokuapp.com/)
 
 
-Thanks for visiting! 
+## Thanks for visiting! 
 
 
 
