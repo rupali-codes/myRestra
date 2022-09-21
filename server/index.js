@@ -19,9 +19,9 @@ const foodRouter = require('./routers/food')
 const commentRouter = require('./routers/comment')
 const bookingRouter = require('./routers/booking')
 
-const publicDirPath = path.join(__dirname, '../public')
-const viewsPath = path.join(__dirname, '../templates/views')
-const partialsPath = path.join(__dirname, '../templates/partials')
+const publicDirPath = path.join(__dirname, '../client/public')
+const viewsPath = path.join(__dirname, '../client/templates/views')
+const partialsPath = path.join(__dirname, '../client/templates/partials')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))

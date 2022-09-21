@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js -ejs, hbs"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js -ejs, hbs"
   },
   "repository": {
     "type": "git",
