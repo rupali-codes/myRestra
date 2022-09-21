@@ -107,12 +107,11 @@ To get a local copy in your machine and running up follow the following steps.
     ```
 
     OR
-
-
+   
     ```bash
     npm run dev
     ```
-
+    
 ### View [Demo](https://its-myrestra-web.herokuapp.com)
 
 ## Become a contributor
