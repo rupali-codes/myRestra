@@ -2,7 +2,7 @@
 
 Come Meet, Eat & Enjoy the true Taste
 
-![MyRestra logo](client/public/images/preview.jpg)
+![MyRestra logo](./client/public/images/preview.png)
 
 ## Built with
 <table>
